@@ -506,7 +506,9 @@ class _MapScreenState extends ConsumerState<MapScreen>
         },
         minZoom: 11,
         maxZoom: _maxZoom,
-        backgroundColor: const Color(0xFFEAF2FB),
+        backgroundColor: AppColors.dark
+            ? const Color(0xFF00081A)
+            : const Color(0xFFEAF2FB),
         interactionOptions: const InteractionOptions(
           flags: InteractiveFlag.all & ~InteractiveFlag.rotate,
         ),

@@ -724,7 +724,7 @@ class _GuardianChecklistState extends ConsumerState<GuardianChecklist> {
       ),
     );
     return AppCard(
-      color: const Color(0xFFEBFBF1),
+      color: AppColors.dark ? AppColors.mintSoft : const Color(0xFFEBFBF1),
       borderColor: AppColors.mint,
       ledgeColor: AppColors.mint,
       child: Column(
@@ -911,13 +911,18 @@ class _PlaceQuizState extends ConsumerState<PlaceQuiz> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
+        gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Color(0xFFBFE7FB), Color(0xFFE3F3FD)],
+          colors: AppColors.dark
+              ? [AppColors.surfaceBlue, AppColors.surfaceTint]
+              : const [Color(0xFFBFE7FB), Color(0xFFE3F3FD)],
         ),
         borderRadius: BorderRadius.circular(26),
-        border: Border.all(color: const Color(0xFF9CCBE8), width: 1.5),
+        border: Border.all(
+          color: AppColors.dark ? AppColors.outline : const Color(0xFF9CCBE8),
+          width: 1.5,
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

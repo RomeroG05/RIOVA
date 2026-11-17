@@ -824,7 +824,11 @@ class _MedalBadge extends StatelessWidget {
                     colors: medal.colors,
                   )
                 : null,
-            color: unlocked ? null : const Color(0xFFDCE8F7),
+            color: unlocked
+                ? null
+                : AppColors.dark
+                ? AppColors.surfaceBlue
+                : const Color(0xFFDCE8F7),
           ),
           child: Icon(
             medal.icon,

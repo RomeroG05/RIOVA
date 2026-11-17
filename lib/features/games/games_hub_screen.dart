@@ -393,7 +393,7 @@ class GameCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: game.cardColor,
+        color: game.cardBackground,
         borderRadius: BorderRadius.circular(22),
         boxShadow: const [
           BoxShadow(
@@ -412,7 +412,11 @@ class GameCard extends StatelessWidget {
               Flexible(
                 child: Pill(
                   label: game.difficulty,
-                  color: game.easy ? AppColors.greenDeep : AppColors.blue,
+                  color: game.easy
+                      ? (AppColors.dark
+                            ? AppColors.greenDark
+                            : AppColors.greenDeep)
+                      : AppColors.blue,
                   foreground: Colors.white,
                   dense: true,
                 ),

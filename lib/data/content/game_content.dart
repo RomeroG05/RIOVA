@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 import '../../core/illustrations/scene_painter.dart';
+import '../../core/theme/app_colors.dart';
 import '../../core/widgets/chunky_button.dart';
 import '../models/explorer.dart';
 import '../models/place.dart';
@@ -94,6 +95,18 @@ class GameInfo {
   final IconData ctaIcon;
   final ChunkyTone tone;
   final Color cardColor;
+
+  /// Fondo de la tarjeta: el pastel del diseño de día; en modo oscuro, el
+  /// mismo matiz pero oscuro, para que el texto claro se lea bien.
+  Color get cardBackground {
+    if (!AppColors.dark) return cardColor;
+    final hsl = HSLColor.fromColor(cardColor);
+    return hsl
+        .withSaturation((hsl.saturation * 0.6).clamp(0.18, 0.38))
+        .withLightness(0.17)
+        .toColor();
+  }
+
   final SceneSpec scene;
   final UnlockRule unlock;
   final bool isNew;
