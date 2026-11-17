@@ -170,7 +170,7 @@ class _Hero extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(28),
       child: DecoratedBox(
-        decoration: const BoxDecoration(color: Colors.white),
+        decoration: BoxDecoration(color: AppColors.surface),
         child: Column(
           children: [
             SizedBox(
@@ -182,23 +182,26 @@ class _Hero extends StatelessWidget {
                     opacity: 0.6,
                     child: SceneIllustration(spec: SceneSpec.valley),
                   ),
-                  const DecoratedBox(
+                  DecoratedBox(
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [Color(0x00FFFFFF), Colors.white],
+                        colors: [
+                          AppColors.surface.withValues(alpha: 0),
+                          AppColors.surface,
+                        ],
                         stops: [0.35, 1],
                       ),
                     ),
                   ),
-                  const Positioned(
+                  Positioned(
                     left: 14,
                     top: 14,
                     child: Pill(
                       label: 'Ríos de Loja',
                       icon: Icons.water_drop_rounded,
-                      color: Colors.white,
+                      color: AppColors.surface,
                       uppercase: true,
                     ),
                   ),
@@ -301,7 +304,7 @@ class _FeatureTile extends StatelessWidget {
                 ],
               ),
             ),
-            const Icon(Icons.chevron_right_rounded, color: AppColors.inkMuted),
+            Icon(Icons.chevron_right_rounded, color: AppColors.inkMuted),
           ],
         ),
       ),
@@ -358,7 +361,7 @@ class _MissionCard extends ConsumerWidget {
               Container(
                 width: 48,
                 height: 48,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: AppColors.surfaceBlue,
                   shape: BoxShape.circle,
                 ),

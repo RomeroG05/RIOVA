@@ -41,13 +41,13 @@ class PlaceCard extends StatelessWidget {
     final nearby = distance != null && distance < 150;
 
     final status = switch (state) {
-      PlaceState.visited => const Pill(
+      PlaceState.visited => Pill(
         label: 'Sector Superado ★★★',
         color: AppColors.mint,
         foreground: AppColors.greenDeep,
         dense: true,
       ),
-      PlaceState.available => const Pill(
+      PlaceState.available => Pill(
         label: '¡Misión disponible!',
         icon: Icons.water_drop_rounded,
         color: AppColors.cyanSoft,
@@ -117,7 +117,7 @@ class PlaceCard extends StatelessWidget {
                         ),
                         if (distance != null) ...[
                           const SizedBox(width: 10),
-                          const Icon(
+                          Icon(
                             Icons.near_me_outlined,
                             size: 15,
                             color: AppColors.blue,
@@ -139,7 +139,7 @@ class PlaceCard extends StatelessWidget {
               Pressable(
                 semanticLabel: 'Cerrar',
                 onTap: onClose,
-                child: const SizedBox(
+                child: SizedBox(
                   width: 40,
                   height: 40,
                   child: Icon(Icons.close_rounded, color: AppColors.inkMuted),

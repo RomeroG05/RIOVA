@@ -288,7 +288,7 @@ class _StopCard extends ConsumerWidget {
               color: AppColors.cyanSoft,
               borderRadius: BorderRadius.circular(16),
             ),
-            child: const Icon(
+            child: Icon(
               Icons.location_on_rounded,
               color: AppColors.teal,
               size: 30,
@@ -309,11 +309,7 @@ class _StopCard extends ConsumerWidget {
                 Text('Tótem ${place.shortName}', style: t.titleLarge),
                 Row(
                   children: [
-                    const Icon(
-                      Icons.waves_rounded,
-                      size: 18,
-                      color: AppColors.teal,
-                    ),
+                    Icon(Icons.waves_rounded, size: 18, color: AppColors.teal),
                     const SizedBox(width: 4),
                     Text('Sector ${place.river.label}', style: t.bodyMedium),
                   ],
@@ -344,7 +340,7 @@ class _StopCard extends ConsumerWidget {
                               ? const TextSpan(
                                   text: 'Ya tienes el sello oficial de esta parada',
                                 )
-                              : const TextSpan(
+                              : TextSpan(
                                   text: 'Recompensa: ',
                                   children: [
                                     TextSpan(

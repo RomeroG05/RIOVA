@@ -6,18 +6,36 @@ import '../theme/app_motion.dart';
 
 /// Variantes de color del botón 3D del prototipo.
 enum ChunkyTone {
-  cyan(AppColors.cyan, AppColors.cyanDark, Colors.white),
-  green(AppColors.green, AppColors.greenDark, Colors.white),
-  teal(AppColors.teal, AppColors.tealDark, Colors.white),
-  blue(AppColors.blue, AppColors.blueDark, Colors.white),
-  red(AppColors.red, AppColors.redDark, Colors.white),
-  forest(AppColors.greenDeep, Color(0xFF0B4520), Colors.white),
-  soft(AppColors.blueSoft, Color(0xFFB4C7E4), AppColors.ink);
+  cyan,
+  green,
+  teal,
+  blue,
+  red,
+  forest,
+  soft;
 
-  const ChunkyTone(this.face, this.ledge, this.foreground);
-  final Color face;
-  final Color ledge;
-  final Color foreground;
+  /// Los colores se resuelven al dibujar para seguir el tema claro/oscuro.
+  Color get face => switch (this) {
+    cyan => AppColors.cyan,
+    green => AppColors.green,
+    teal => AppColors.teal,
+    blue => AppColors.blue,
+    red => AppColors.red,
+    forest => AppColors.dark ? AppColors.greenDark : AppColors.greenDeep,
+    soft => AppColors.blueSoft,
+  };
+
+  Color get ledge => switch (this) {
+    cyan => AppColors.cyanDark,
+    green => AppColors.greenDark,
+    teal => AppColors.tealDark,
+    blue => AppColors.blueDark,
+    red => AppColors.redDark,
+    forest => const Color(0xFF0B4520),
+    soft => AppColors.dark ? AppColors.outline : const Color(0xFFB4C7E4),
+  };
+
+  Color get foreground => this == soft ? AppColors.ink : Colors.white;
 }
 
 /// Botón con "repisa" inferior: al presionar, la cara baja y se apoya sobre

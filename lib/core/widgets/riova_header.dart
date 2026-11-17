@@ -115,7 +115,7 @@ class ProfileButton extends ConsumerWidget {
             child: Container(
               width: 40,
               height: 40,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: AppColors.teal,
                 shape: BoxShape.circle,
               ),
@@ -230,14 +230,11 @@ class RiovaBackBar extends StatelessWidget implements PreferredSizeWidget {
             child: Container(
               width: 44,
               height: 44,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: AppColors.blueSoft,
                 shape: BoxShape.circle,
               ),
-              child: const Icon(
-                Icons.arrow_back_rounded,
-                color: AppColors.blue,
-              ),
+              child: Icon(Icons.arrow_back_rounded, color: AppColors.blue),
             ),
           ),
           const SizedBox(width: 10),

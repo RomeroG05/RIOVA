@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
 
-/// Tarjeta blanca redondeada con sombra suave y, opcionalmente, una repisa
+/// Tarjeta (blanca en tema claro) redondeada con sombra suave y, opcionalmente, una repisa
 /// inferior de color (como las tarjetas del mapa en el prototipo).
 class AppCard extends StatelessWidget {
   const AppCard({
     super.key,
     required this.child,
     this.padding = const EdgeInsets.all(18),
-    this.color = Colors.white,
+    this._color,
     this.radius = 24,
     this.ledgeColor,
     this.borderColor,
@@ -18,7 +18,8 @@ class AppCard extends StatelessWidget {
 
   final Widget child;
   final EdgeInsetsGeometry padding;
-  final Color color;
+  final Color? _color;
+  Color get color => _color ?? AppColors.surface;
   final double radius;
   final Color? ledgeColor;
   final Color? borderColor;
@@ -59,16 +60,18 @@ class Pill extends StatelessWidget {
     super.key,
     required this.label,
     this.icon,
-    this.color = AppColors.blueSoft,
-    this.foreground = AppColors.teal,
+    this._color,
+    this._foreground,
     this.uppercase = false,
     this.dense = false,
   });
 
   final String label;
   final IconData? icon;
-  final Color color;
-  final Color foreground;
+  final Color? _color;
+  Color get color => _color ?? AppColors.blueSoft;
+  final Color? _foreground;
+  Color get foreground => _foreground ?? AppColors.teal;
   final bool uppercase;
   final bool dense;
 
@@ -116,14 +119,16 @@ class IconBubble extends StatelessWidget {
   const IconBubble({
     super.key,
     required this.icon,
-    this.color = AppColors.cyanSoft,
-    this.foreground = AppColors.teal,
+    this._color,
+    this._foreground,
     this.size = 48,
   });
 
   final IconData icon;
-  final Color color;
-  final Color foreground;
+  final Color? _color;
+  Color get color => _color ?? AppColors.cyanSoft;
+  final Color? _foreground;
+  Color get foreground => _foreground ?? AppColors.teal;
   final double size;
 
   @override
@@ -144,14 +149,15 @@ class SectionTitle extends StatelessWidget {
     super.key,
     required this.title,
     this.icon,
-    this.iconColor = AppColors.teal,
+    this._iconColor,
     this.trailing,
     this.subtitle,
   });
 
   final String title;
   final IconData? icon;
-  final Color iconColor;
+  final Color? _iconColor;
+  Color get iconColor => _iconColor ?? AppColors.teal;
   final Widget? trailing;
   final String? subtitle;
 

@@ -9,6 +9,7 @@ import 'data/repositories/progress_repository.dart';
 import 'state/content_revision.dart';
 import 'state/explorer_controller.dart';
 import 'state/sensor_network.dart';
+import 'state/settings_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,6 +18,7 @@ Future<void> main() async {
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
   final repository = await PrefsProgressRepository.open();
+  final settings = await PrefsSettingsRepository.open();
 
   // Firebase es opcional: si no se puede iniciar, la app funciona igual con
   // el contenido empaquetado y el avance guardado en el teléfono.
@@ -24,6 +26,7 @@ Future<void> main() async {
   final container = ProviderContainer(
     overrides: [
       progressRepositoryProvider.overrideWithValue(repository),
+      settingsRepositoryProvider.overrideWithValue(settings),
       if (cloud != null) ...[
         activityLogProvider.overrideWithValue(cloud),
         remoteSensorDocsProvider.overrideWith((ref) => cloud.sensorDocs()),

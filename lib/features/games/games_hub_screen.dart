@@ -33,8 +33,10 @@ class GamesHubScreen extends ConsumerWidget {
             children: [
               EntranceFade(
                 child: AppCard(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFFEAF6FE), Color(0xFFDDEFFD)],
+                  gradient: LinearGradient(
+                    colors: AppColors.dark
+                        ? [AppColors.surfaceTint, AppColors.surfaceBlue]
+                        : const [Color(0xFFEAF6FE), Color(0xFFDDEFFD)],
                   ),
                   child: Row(
                     children: [
@@ -57,7 +59,7 @@ class GamesHubScreen extends ConsumerWidget {
                             ),
                             const SizedBox(height: 4),
                             Text.rich(
-                              const TextSpan(
+                              TextSpan(
                                 text: '¡Aprende, juega y gana gotitas para convertirte en un ',
                                 children: [
                                   TextSpan(
@@ -133,9 +135,9 @@ class GamesHubScreen extends ConsumerWidget {
               color: AppColors.mintSoft,
               child: Row(
                 children: [
-                  const IconBubble(
+                  IconBubble(
                     icon: Icons.shield_outlined,
-                    color: Colors.white,
+                    color: AppColors.surface,
                     foreground: AppColors.greenDeep,
                     size: 54,
                   ),
@@ -303,7 +305,7 @@ class _PlayerCard extends ConsumerWidget {
                 ProgressBar(
                   value: level.fraction,
                   height: 12,
-                  colors: const [AppColors.mint, AppColors.cyan],
+                  colors: [AppColors.mint, AppColors.cyan],
                   track: const Color(0x55062E5E),
                   showKnob: true,
                 ),
@@ -431,7 +433,7 @@ class GameCard extends StatelessWidget {
           SizedBox(
             height: 26,
             child: locked
-                ? const Pill(
+                ? Pill(
                     label: 'Bloqueado',
                     icon: Icons.lock_outline_rounded,
                     color: AppColors.surfaceBlue,
@@ -439,14 +441,14 @@ class GameCard extends StatelessWidget {
                     dense: true,
                   )
                 : completed
-                ? const Pill(
+                ? Pill(
                     label: 'Completado ✓',
                     color: AppColors.mint,
                     foreground: AppColors.greenDeep,
                     dense: true,
                   )
                 : game.isNew
-                ? const Pill(
+                ? Pill(
                     label: '¡Nuevo!',
                     icon: Icons.auto_awesome_rounded,
                     color: AppColors.yellow,

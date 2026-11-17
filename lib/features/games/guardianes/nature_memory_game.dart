@@ -338,7 +338,7 @@ class _MemoryCardState extends State<_MemoryCard>
                           decoration: BoxDecoration(
                             color: card.matched
                                 ? AppColors.mintSoft
-                                : Colors.white,
+                                : AppColors.surface,
                             borderRadius: BorderRadius.circular(18),
                             border: Border.all(
                               color: card.matched
@@ -375,7 +375,7 @@ class _MemoryCardState extends State<_MemoryCard>
                       )
                     : Container(
                         decoration: BoxDecoration(
-                          gradient: const LinearGradient(
+                          gradient: LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [AppColors.green, AppColors.greenDeep],

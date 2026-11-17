@@ -51,7 +51,7 @@ class MainShell extends StatelessWidget {
         child: NavigationBar(
           selectedIndex: shell.currentIndex,
           destinations: _destinations,
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.surface,
           indicatorColor: AppColors.blueSoft,
           onDestinationSelected: (i) {
             HapticFeedback.selectionClick();

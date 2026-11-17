@@ -97,11 +97,11 @@ class _QrTile extends StatelessWidget {
               child: QrImageView(
                 data: place.qrPayload,
                 backgroundColor: Colors.white,
-                eyeStyle: const QrEyeStyle(
+                eyeStyle: QrEyeStyle(
                   eyeShape: QrEyeShape.square,
                   color: AppColors.ink,
                 ),
-                dataModuleStyle: const QrDataModuleStyle(
+                dataModuleStyle: QrDataModuleStyle(
                   dataModuleShape: QrDataModuleShape.square,
                   color: AppColors.ink,
                 ),

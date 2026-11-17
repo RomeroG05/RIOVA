@@ -348,7 +348,7 @@ class _FloodDetectiveGameState extends ConsumerState<FloodDetectiveGame> {
               children: [
                 Row(
                   children: [
-                    const Icon(
+                    Icon(
                       Icons.water_drop_outlined,
                       color: AppColors.teal,
                       size: 18,
@@ -369,11 +369,7 @@ class _FloodDetectiveGameState extends ConsumerState<FloodDetectiveGame> {
                 const SizedBox(height: 8),
                 ProgressBar(
                   value: resolved,
-                  colors: const [
-                    AppColors.teal,
-                    AppColors.cyan,
-                    AppColors.green,
-                  ],
+                  colors: [AppColors.teal, AppColors.cyan, AppColors.green],
                   showKnob: true,
                 ),
               ],
@@ -467,11 +463,7 @@ class _Scene extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
             child: Row(
               children: [
-                const Icon(
-                  Icons.near_me_outlined,
-                  color: AppColors.teal,
-                  size: 20,
-                ),
+                Icon(Icons.near_me_outlined, color: AppColors.teal, size: 20),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -582,7 +574,7 @@ class _Hotspot extends StatelessWidget {
         ? (AppColors.green, Icons.check_circle_outline_rounded, Colors.white)
         : active
         ? (AppColors.cyan, Icons.search_rounded, Colors.white)
-        : (Colors.white, Icons.help_outline_rounded, AppColors.blue);
+        : (AppColors.surface, Icons.help_outline_rounded, AppColors.blue);
     return Pressable(
       onTap: onTap,
       semanticLabel: '$label${solved ? ', resuelto' : ''}',
@@ -616,7 +608,7 @@ class _Hotspot extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.surface,
               borderRadius: BorderRadius.circular(999),
             ),
             child: Text(
@@ -726,7 +718,7 @@ class _CluePanel extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.fromLTRB(16, 12, 12, 12),
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     colors: [AppColors.cyan, AppColors.blue],
                   ),
                   borderRadius: BorderRadius.circular(999),
@@ -787,7 +779,7 @@ class _Option extends StatelessWidget {
         ? AppColors.mint
         : wrong
         ? AppColors.redSoft
-        : Colors.white;
+        : AppColors.surface;
     return AnimatedOpacity(
       duration: AppMotion.of(context, AppMotion.medium),
       opacity: eliminated ? 0.35 : 1,
@@ -891,10 +883,7 @@ class _ToolsPanel extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(
-                Icons.construction_rounded,
-                color: AppColors.greenDeep,
-              ),
+              Icon(Icons.construction_rounded, color: AppColors.greenDeep),
               const SizedBox(width: 8),
               Expanded(
                 child: Text(
@@ -902,7 +891,7 @@ class _ToolsPanel extends StatelessWidget {
                   style: t.titleMedium,
                 ),
               ),
-              const Pill(
+              Pill(
                 label: 'Elige una',
                 color: AppColors.mintSoft,
                 foreground: AppColors.greenDeep,

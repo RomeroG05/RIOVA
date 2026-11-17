@@ -17,7 +17,7 @@ abstract final class AppTheme {
   static TextTheme _textTheme() {
     const q = AppFonts.display;
     const n = AppFonts.body;
-    return const TextTheme(
+    return TextTheme(
       displaySmall: TextStyle(
         fontFamily: q,
         fontSize: 34,
@@ -109,11 +109,19 @@ abstract final class AppTheme {
     );
   }
 
+  /// Tema claro (usado también en pruebas).
   static ThemeData light() {
+    AppColors.dark = false;
+    return build();
+  }
+
+  /// Tema con la paleta activa de [AppColors] (clara u oscura).
+  static ThemeData build() {
+    final dark = AppColors.dark;
     final scheme =
         ColorScheme.fromSeed(
           seedColor: AppColors.teal,
-          brightness: Brightness.light,
+          brightness: dark ? Brightness.dark : Brightness.light,
         ).copyWith(
           primary: AppColors.teal,
           onPrimary: Colors.white,
@@ -127,7 +135,7 @@ abstract final class AppTheme {
           surface: AppColors.surface,
           onSurface: AppColors.ink,
           onSurfaceVariant: AppColors.inkSoft,
-          surfaceContainerLowest: Colors.white,
+          surfaceContainerLowest: AppColors.surface,
           surfaceContainerLow: AppColors.background,
           surfaceContainer: AppColors.surfaceTint,
           surfaceContainerHigh: AppColors.surfaceBlue,
@@ -139,6 +147,7 @@ abstract final class AppTheme {
 
     return ThemeData(
       useMaterial3: true,
+      brightness: dark ? Brightness.dark : Brightness.light,
       colorScheme: scheme,
       scaffoldBackgroundColor: AppColors.background,
       fontFamily: AppFonts.body,
@@ -153,13 +162,15 @@ abstract final class AppTheme {
         centerTitle: false,
         titleTextStyle: text.titleLarge,
         foregroundColor: AppColors.ink,
-        systemOverlayStyle: SystemUiOverlayStyle.dark.copyWith(
-          statusBarColor: Colors.transparent,
-          systemNavigationBarColor: Colors.transparent,
-        ),
+        systemOverlayStyle:
+            (dark ? SystemUiOverlayStyle.light : SystemUiOverlayStyle.dark)
+                .copyWith(
+                  statusBarColor: Colors.transparent,
+                  systemNavigationBarColor: Colors.transparent,
+                ),
       ),
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         indicatorColor: AppColors.blueSoft,
         elevation: 0,
@@ -186,8 +197,8 @@ abstract final class AppTheme {
           ),
         ),
       ),
-      cardTheme: const CardThemeData(
-        color: Colors.white,
+      cardTheme: CardThemeData(
+        color: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         elevation: 0,
         margin: EdgeInsets.zero,
@@ -197,7 +208,7 @@ abstract final class AppTheme {
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: Colors.white,
+        fillColor: AppColors.surface,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: 20,
           vertical: 18,
@@ -205,34 +216,34 @@ abstract final class AppTheme {
         hintStyle: text.bodyLarge?.copyWith(color: AppColors.inkMuted),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_radius),
-          borderSide: const BorderSide(color: AppColors.outline, width: 2),
+          borderSide: BorderSide(color: AppColors.outline, width: 2),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_radius),
-          borderSide: const BorderSide(color: AppColors.outline, width: 2),
+          borderSide: BorderSide(color: AppColors.outline, width: 2),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_radius),
-          borderSide: const BorderSide(color: AppColors.teal, width: 2),
+          borderSide: BorderSide(color: AppColors.teal, width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_radius),
-          borderSide: const BorderSide(color: AppColors.red, width: 2),
+          borderSide: BorderSide(color: AppColors.red, width: 2),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(_radius),
-          borderSide: const BorderSide(color: AppColors.red, width: 2),
+          borderSide: BorderSide(color: AppColors.red, width: 2),
         ),
       ),
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
-        backgroundColor: AppColors.ink,
+        backgroundColor: dark ? const Color(0xFF2A4058) : AppColors.ink,
         contentTextStyle: text.bodyMedium?.copyWith(color: Colors.white),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         insetPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
       ),
-      bottomSheetTheme: const BottomSheetThemeData(
-        backgroundColor: Colors.white,
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         showDragHandle: true,
         dragHandleColor: AppColors.outline,
@@ -241,7 +252,7 @@ abstract final class AppTheme {
         ),
       ),
       dialogTheme: DialogThemeData(
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.surface,
         surfaceTintColor: Colors.transparent,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(28)),
         titleTextStyle: text.titleLarge,
@@ -257,11 +268,11 @@ abstract final class AppTheme {
       iconButtonTheme: IconButtonThemeData(
         style: IconButton.styleFrom(minimumSize: const Size(48, 48)),
       ),
-      progressIndicatorTheme: const ProgressIndicatorThemeData(
+      progressIndicatorTheme: ProgressIndicatorThemeData(
         color: AppColors.cyan,
         linearTrackColor: AppColors.blueSoft,
       ),
-      dividerTheme: const DividerThemeData(color: AppColors.outline),
+      dividerTheme: DividerThemeData(color: AppColors.outline),
     );
   }
 }

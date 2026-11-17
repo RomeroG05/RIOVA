@@ -69,11 +69,14 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen>
     final name = ref.watch(explorerProvider.select((s) => s.profile?.name));
     return Scaffold(
       body: DecoratedBox(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Color(0xFFE3F2FD), Color(0xFFC6E4FB)],
+            // De noche (modo oscuro) el cielo de Loja también oscurece.
+            colors: AppColors.dark
+                ? const [Color(0xFF0A1626), Color(0xFF123150)]
+                : const [Color(0xFFE3F2FD), Color(0xFFC6E4FB)],
           ),
         ),
         child: Stack(
@@ -138,7 +141,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen>
                                   width: 56,
                                   height: 56,
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: AppColors.surface,
                                     borderRadius: BorderRadius.circular(18),
                                     boxShadow: const [
                                       BoxShadow(
@@ -148,7 +151,7 @@ class _WelcomeScreenState extends ConsumerState<WelcomeScreen>
                                       ),
                                     ],
                                   ),
-                                  child: const Icon(
+                                  child: Icon(
                                     Icons.travel_explore_rounded,
                                     color: AppColors.teal,
                                     size: 28,
@@ -224,7 +227,7 @@ class _LogoState extends State<_Logo> with SingleTickerProviderStateMixin {
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          const ExcludeSemantics(
+          ExcludeSemantics(
             child: Text.rich(
               TextSpan(
                 style: style,
@@ -264,8 +267,10 @@ class _LogoState extends State<_Logo> with SingleTickerProviderStateMixin {
               ),
               child: RotationTransition(
                 turns: _spin,
-                child: const Icon(
-                  Icons.wb_sunny_outlined,
+                child: Icon(
+                  AppColors.dark
+                      ? Icons.nightlight_round
+                      : Icons.wb_sunny_outlined,
                   color: Colors.white,
                   size: 22,
                 ),
@@ -292,7 +297,7 @@ class _FactBubble extends StatelessWidget {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.92),
+            color: AppColors.surface.withValues(alpha: 0.92),
             borderRadius: BorderRadius.circular(22),
             boxShadow: const [
               BoxShadow(
@@ -324,7 +329,7 @@ class _FactBubble extends StatelessWidget {
             child: Container(
               width: 18,
               height: 18,
-              color: Colors.white.withValues(alpha: 0.92),
+              color: AppColors.surface.withValues(alpha: 0.92),
             ),
           ),
         ),
@@ -353,7 +358,26 @@ class _SkyPainter extends CustomPainter {
       ..lineTo(w, h)
       ..lineTo(0, h)
       ..close();
-    canvas.drawPath(back, Paint()..color = const Color(0xFFB9E3F8));
+    final night = AppColors.dark;
+    if (night) {
+      final star = Paint()..color = Colors.white.withValues(alpha: 0.7);
+      for (final (x, y, r) in const [
+        (0.08, 0.08, 1.4),
+        (0.22, 0.2, 1.0),
+        (0.36, 0.06, 1.6),
+        (0.58, 0.14, 1.1),
+        (0.74, 0.05, 1.5),
+        (0.88, 0.16, 1.0),
+        (0.95, 0.04, 1.2),
+      ]) {
+        canvas.drawCircle(Offset(w * x, h * y), r * 1.6, star);
+      }
+    }
+    canvas.drawPath(
+      back,
+      Paint()
+        ..color = night ? const Color(0xFF173653) : const Color(0xFFB9E3F8),
+    );
     final front = Path()
       ..moveTo(0, h * 0.82)
       ..lineTo(w * 0.12, h * 0.6)
@@ -364,13 +388,19 @@ class _SkyPainter extends CustomPainter {
       ..lineTo(w, h)
       ..lineTo(0, h)
       ..close();
-    canvas.drawPath(front, Paint()..color = const Color(0xFF94DCF6));
+    canvas.drawPath(
+      front,
+      Paint()
+        ..color = night ? const Color(0xFF1E4A6E) : const Color(0xFF94DCF6),
+    );
     canvas.drawRect(
       Rect.fromLTWH(0, h * 0.92, w, h * 0.08),
-      Paint()..color = const Color(0xFFB0E0F6),
+      Paint()
+        ..color = night ? const Color(0xFF1A4263) : const Color(0xFFB0E0F6),
     );
 
-    final cloud = Paint()..color = Colors.white.withValues(alpha: 0.75);
+    final cloud = Paint()
+      ..color = Colors.white.withValues(alpha: night ? 0.12 : 0.75);
     void drawCloud(double x, double y, double s) {
       final dx = ((x + t * w * 1.4) % (w + 160)) - 80;
       canvas.drawRRect(

@@ -397,13 +397,13 @@ class _WalletPill extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(999),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Icon(Icons.water_drop_rounded, color: AppColors.teal, size: 18),
+          Icon(Icons.water_drop_rounded, color: AppColors.teal, size: 18),
           const SizedBox(width: 4),
           CountUpText(
             wallet,
@@ -450,7 +450,7 @@ class StoreTabs extends StatelessWidget {
               heightFactor: 1,
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.surface,
                   borderRadius: BorderRadius.circular(14),
                   boxShadow: const [
                     BoxShadow(
@@ -540,7 +540,7 @@ class _StoreTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = Theme.of(context).textTheme;
     final Widget badge = equipped
-        ? const Pill(
+        ? Pill(
             label: 'Puesto',
             icon: Icons.check_rounded,
             dense: true,
@@ -548,7 +548,7 @@ class _StoreTile extends StatelessWidget {
             foreground: AppColors.greenDeep,
           )
         : owned
-        ? const Pill(label: 'Tuyo', dense: true, color: AppColors.cyanSoft)
+        ? Pill(label: 'Tuyo', dense: true, color: AppColors.cyanSoft)
         : levelLocked
         ? Pill(
             label: 'Nivel ${item.minLevel}',
@@ -577,7 +577,7 @@ class _StoreTile extends StatelessWidget {
         curve: AppMotion.easeOut,
         padding: const EdgeInsets.fromLTRB(10, 14, 10, 12),
         decoration: BoxDecoration(
-          color: selected ? AppColors.blueSoft : Colors.white,
+          color: selected ? AppColors.blueSoft : AppColors.surface,
           borderRadius: BorderRadius.circular(22),
           border: Border.all(
             color: selected ? AppColors.teal : AppColors.outline,

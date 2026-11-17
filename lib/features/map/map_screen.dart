@@ -317,7 +317,7 @@ class _MapScreenState extends ConsumerState<MapScreen>
                       ProgressBar(
                         value: visited / places.length,
                         height: 16,
-                        colors: const [AppColors.cyan, AppColors.blue],
+                        colors: [AppColors.cyan, AppColors.blue],
                       ),
                       Text(
                         '${(visited / places.length * 100).round()}% EXPLORADO',
@@ -531,8 +531,10 @@ class _MapScreenState extends ConsumerState<MapScreen>
           urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
           userAgentPackageName: 'com.riova.riova',
           maxNativeZoom: 19,
-          tileBuilder: (context, tile, _) =>
-              ColorFiltered(colorFilter: _tint, child: tile),
+          tileBuilder: (context, tile, _) => ColorFiltered(
+            colorFilter: AppColors.dark ? _night : _tint,
+            child: tile,
+          ),
         ),
         PolylineLayer(
           polylines: [
@@ -604,6 +606,15 @@ class _MapScreenState extends ConsumerState<MapScreen>
   }
 
   /// Leve desaturación + tinte azul para que el mapa combine con la app.
+  /// Modo oscuro: invierte el brillo y gira el tono 180° (el agua sigue
+  /// azul y los parques verdes) con un fondo azul noche.
+  static const _night = ColorFilter.matrix(<double>[
+    0.488, -1.216, -0.122, 0, 217, //
+    -0.362, -0.366, -0.122, 0, 225, //
+    -0.362, -1.216, 0.728, 0, 237, //
+    0, 0, 0, 1, 0,
+  ]);
+
   static const _tint = ColorFilter.matrix(<double>[
     0.86, 0.06, 0.04, 0, 6, //
     0.04, 0.88, 0.06, 0, 8, //

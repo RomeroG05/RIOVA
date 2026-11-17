@@ -124,7 +124,7 @@ class _CreateExplorerScreenState extends ConsumerState<CreateExplorerScreen> {
                 textInputAction: TextInputAction.done,
                 style: t.titleMedium,
                 onFieldSubmitted: (_) => _submit(),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'Explorador',
                   counterText: '',
                   suffixIcon: Icon(Icons.edit_outlined, color: AppColors.teal),

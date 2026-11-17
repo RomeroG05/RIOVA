@@ -316,7 +316,7 @@ class _MythsGameState extends ConsumerState<MythsGame>
                         left: 16,
                         child: Opacity(
                           opacity: (-tilt * 2.5).clamp(0.0, 1.0),
-                          child: const _SideTag(
+                          child: _SideTag(
                             text: 'MITO',
                             color: AppColors.red,
                             icon: Icons.close_rounded,
@@ -448,7 +448,7 @@ class _MythFace extends StatelessWidget {
       constraints: const BoxConstraints(minHeight: 280),
       padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
-        color: dimmed ? const Color(0xFFF1F5FB) : Colors.white,
+        color: dimmed ? AppColors.surfaceTint : AppColors.surface,
         borderRadius: BorderRadius.circular(30),
         border: Border.all(color: AppColors.outline, width: 1.5),
         boxShadow: dimmed
@@ -474,7 +474,7 @@ class _MythFace extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 14),
-          const Pill(
+          Pill(
             label: '¿Mito o verdad?',
             icon: Icons.swipe_rounded,
             dense: true,

@@ -86,15 +86,17 @@ class ProgressBar extends StatelessWidget {
     super.key,
     required this.value,
     this.height = 10,
-    this.colors = const [AppColors.blue, AppColors.blue],
-    this.track = AppColors.blueSoft,
+    this._colors,
+    this._track,
     this.showKnob = false,
   });
 
   final double value;
   final double height;
-  final List<Color> colors;
-  final Color track;
+  final List<Color>? _colors;
+  List<Color> get colors => _colors ?? [AppColors.blue, AppColors.blue];
+  final Color? _track;
+  Color get track => _track ?? AppColors.blueSoft;
   final bool showKnob;
 
   @override

@@ -138,7 +138,7 @@ class PlaceNode extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 3),
               constraints: const BoxConstraints(maxWidth: 128),
               decoration: BoxDecoration(
-                color: selected ? AppColors.teal : Colors.white,
+                color: selected ? AppColors.teal : AppColors.surface,
                 borderRadius: BorderRadius.circular(999),
                 boxShadow: const [
                   BoxShadow(
@@ -160,7 +160,7 @@ class PlaceNode extends StatelessWidget {
               ),
             ),
             if (state == PlaceState.visited)
-              const Text(
+              Text(
                 '★★★',
                 style: TextStyle(
                   color: AppColors.blue,

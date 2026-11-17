@@ -20,8 +20,6 @@ import '../onboarding/create_explorer_screen.dart';
 import '../../core/widgets/two_column_grid.dart';
 import '../../core/widgets/hat.dart';
 import '../../core/widgets/profile_banner.dart';
-import '../../data/content/banner_content.dart';
-import '../../data/content/hat_content.dart';
 import '../../data/content/economy.dart';
 
 /// Pantalla "Mi perfil".
@@ -55,7 +53,6 @@ class ProfileScreen extends ConsumerWidget {
         ],
       ),
       _IdentityCard(state: s),
-      _StoreCard(state: s),
       _StreakCard(state: s),
       Row(
         children: [
@@ -166,21 +163,6 @@ class ProfileScreen extends ConsumerWidget {
           ],
         ),
       ),
-      Column(
-        children: [
-          TextButton.icon(
-            onPressed: () => context.push(Routes.qrCodes),
-            icon: const Icon(Icons.qr_code_2_rounded),
-            label: const Text('Códigos QR de los tótems (docentes)'),
-          ),
-          TextButton.icon(
-            onPressed: () => _confirmReset(context, ref),
-            icon: const Icon(Icons.restart_alt_rounded),
-            style: TextButton.styleFrom(foregroundColor: AppColors.red),
-            label: const Text('Reiniciar aventura'),
-          ),
-        ],
-      ),
     ];
 
     return CustomScrollView(
@@ -197,30 +179,6 @@ class ProfileScreen extends ConsumerWidget {
         ),
       ],
     );
-  }
-
-  Future<void> _confirmReset(BuildContext context, WidgetRef ref) async {
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('¿Reiniciar la aventura?'),
-        content: const Text(
-          'Se borrarán tu perfil, gotitas, medallas y paradas registradas en este teléfono y su copia en la nube.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancelar'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            style: TextButton.styleFrom(foregroundColor: AppColors.red),
-            child: const Text('Reiniciar'),
-          ),
-        ],
-      ),
-    );
-    if (ok == true) await ref.read(explorerProvider.notifier).reset();
   }
 }
 
@@ -343,10 +301,31 @@ class _IdentityCard extends ConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      profile?.name ?? 'Explorador',
-                      style: t.headlineMedium?.copyWith(color: Colors.white),
-                      overflow: TextOverflow.ellipsis,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            profile?.name ?? 'Explorador',
+                            style: t.headlineMedium?.copyWith(
+                              color: Colors.white,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        const SizedBox(width: 6),
+                        _CardAction(
+                          icon: Icons.storefront_rounded,
+                          label: 'Abrir la tienda',
+                          onTap: () => context.push(Routes.store),
+                        ),
+                        const SizedBox(width: 6),
+                        _CardAction(
+                          icon: Icons.settings_rounded,
+                          label: 'Abrir ajustes',
+                          onTap: () => context.push(Routes.settings),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 4),
                     Wrap(
@@ -447,7 +426,7 @@ class _IdentityCard extends ConsumerWidget {
                 ProgressBar(
                   value: level.fraction,
                   height: 12,
-                  colors: const [AppColors.cyan, AppColors.mint],
+                  colors: [AppColors.cyan, AppColors.mint],
                   track: const Color(0x55FFFFFF),
                   showKnob: true,
                 ),
@@ -491,7 +470,7 @@ class _StreakCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              const IconBubble(
+              IconBubble(
                 icon: Icons.local_fire_department_rounded,
                 color: AppColors.blueSoft,
                 foreground: AppColors.blue,
@@ -572,7 +551,7 @@ class _StreakCard extends StatelessWidget {
                   ),
                 ),
                 if (missionDone)
-                  const Pill(
+                  Pill(
                     label: '+${Economy.missionBonus} GOTITAS',
                     color: AppColors.mint,
                     foreground: AppColors.greenDeep,
@@ -612,7 +591,7 @@ class _DayPill extends StatelessWidget {
         ? AppColors.cyan
         : future
         ? AppColors.surfaceTint
-        : Colors.white;
+        : AppColors.surface;
     return Semantics(
       label: '$label${active ? ', con actividad' : ''}',
       child: Container(
@@ -778,7 +757,7 @@ class _MedalTile extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.fromLTRB(8, 16, 8, 14),
         decoration: BoxDecoration(
-          color: unlocked ? Colors.white : AppColors.surfaceBlue,
+          color: unlocked ? AppColors.surface : AppColors.surfaceBlue,
           borderRadius: BorderRadius.circular(22),
           boxShadow: unlocked
               ? const [
@@ -878,7 +857,7 @@ class _MedalBadge extends StatelessWidget {
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.lock_outline_rounded,
                     size: 13,
                     color: AppColors.inkSoft,
@@ -900,7 +879,7 @@ class _JourneyCard extends StatelessWidget {
     final t = Theme.of(context).textTheme;
     final visited = progress.visited.length;
     final pct = (visited / places.length * 100).round();
-    const colors = {
+    final colors = {
       Zone.sur: (AppColors.cyan, AppColors.cyanSoft),
       Zone.centro: (AppColors.blue, AppColors.blueSoft),
       Zone.norte: (AppColors.green, AppColors.mintSoft),
@@ -976,59 +955,32 @@ class _JourneyCard extends StatelessWidget {
   }
 }
 
-/// Acceso a la "Tienda" (sombreros y banners).
-class _StoreCard extends StatelessWidget {
-  const _StoreCard({required this.state});
+/// Botón circular translúcido de la tarjeta del perfil (Tienda, Ajustes).
+class _CardAction extends StatelessWidget {
+  const _CardAction({
+    required this.icon,
+    required this.label,
+    required this.onTap,
+  });
 
-  final ExplorerState state;
+  final IconData icon;
+  final String label;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    final t = Theme.of(context).textTheme;
-    final p = state.progress;
-    final owned = p.ownedHats.length + p.ownedBanners.length;
-    final total = hats.length + banners.length;
     return Pressable(
-      semanticLabel: 'Abrir la tienda',
-      onTap: () => context.push(Routes.store),
-      child: AppCard(
-        color: AppColors.yellowSoft,
-        borderColor: AppColors.yellow,
-        ledgeColor: AppColors.yellow,
-        child: Row(
-          children: [
-            Container(
-              width: 64,
-              height: 64,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-              ),
-              alignment: Alignment.center,
-              child: HatIcon(hatId: p.equippedHat ?? hats[6].id, width: 48),
-            ),
-            const SizedBox(width: 14),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Tienda 🛍️',
-                    style: t.titleMedium?.copyWith(color: AppColors.amberInk),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    owned == total
-                        ? '¡Tienes todos los sombreros y banners! Eres todo un coleccionista.'
-                        : 'Sombreros y banners para tu perfil. Tienes ${p.wallet} gotitas para gastar.',
-                    style: t.bodyMedium?.copyWith(color: AppColors.amberInk),
-                  ),
-                ],
-              ),
-            ),
-            const Icon(Icons.chevron_right_rounded, color: AppColors.amberInk),
-          ],
+      semanticLabel: label,
+      onTap: onTap,
+      child: Container(
+        width: 42,
+        height: 42,
+        decoration: BoxDecoration(
+          color: const Color(0x33FFFFFF),
+          shape: BoxShape.circle,
+          border: Border.all(color: const Color(0x55FFFFFF), width: 1.5),
         ),
+        child: Icon(icon, color: Colors.white, size: 22),
       ),
     );
   }

@@ -45,11 +45,7 @@ class SemaforoPanel extends ConsumerWidget {
           ),
         ],
         const SizedBox(width: 4),
-        const Icon(
-          Icons.expand_more_rounded,
-          size: 20,
-          color: AppColors.inkSoft,
-        ),
+        Icon(Icons.expand_more_rounded, size: 20, color: AppColors.inkSoft),
       ],
     );
 
@@ -73,11 +69,11 @@ class SemaforoPanel extends ConsumerWidget {
                 ],
               ),
             ),
-            const Icon(Icons.expand_less_rounded, color: AppColors.inkSoft),
+            Icon(Icons.expand_less_rounded, color: AppColors.inkSoft),
           ],
         ),
         const SizedBox(height: 10),
-        const Pill(
+        Pill(
           label: 'Sensores en Vivo • 24/7',
           icon: Icons.podcasts_rounded,
           color: AppColors.mint,
@@ -107,7 +103,7 @@ class SemaforoPanel extends ConsumerWidget {
           ),
           child: Row(
             children: [
-              const Icon(Icons.analytics_outlined, color: AppColors.blue),
+              Icon(Icons.analytics_outlined, color: AppColors.blue),
               const SizedBox(width: 8),
               Expanded(
                 child: Text.rich(
@@ -129,7 +125,7 @@ class SemaforoPanel extends ConsumerWidget {
                   vertical: 6,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.surface,
                   borderRadius: BorderRadius.circular(999),
                 ),
                 child: Row(
@@ -156,7 +152,7 @@ class SemaforoPanel extends ConsumerWidget {
       child: Container(
         padding: EdgeInsets.all(expanded ? 14 : 10),
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.97),
+          color: AppColors.surface.withValues(alpha: 0.97),
           borderRadius: BorderRadius.circular(expanded ? 22 : 999),
           boxShadow: const [
             BoxShadow(

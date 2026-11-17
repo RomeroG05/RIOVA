@@ -165,7 +165,7 @@ class _ProblemFront extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(22),
         border: Border.all(
           color: problem.color.withValues(alpha: 0.25),
@@ -191,7 +191,7 @@ class _ProblemFront extends StatelessWidget {
                 size: 44,
               ),
               const Spacer(),
-              const Icon(
+              Icon(
                 Icons.touch_app_outlined,
                 color: AppColors.inkMuted,
                 size: 20,
@@ -380,14 +380,14 @@ class _GallerySectionState extends State<GallerySection> {
                           ),
                         ),
                         if (photo.drawing)
-                          const Positioned(
+                          Positioned(
                             left: 10,
                             top: 10,
                             child: Pill(
                               label: 'Ilustración',
                               icon: Icons.brush_rounded,
                               dense: true,
-                              color: Colors.white,
+                              color: AppColors.surface,
                             ),
                           ),
                         const Positioned(
@@ -563,12 +563,12 @@ class _BeforeAfterSectionState extends State<BeforeAfterSection> {
         children: [
           Row(
             children: [
-              const Icon(Icons.compare_rounded, color: AppColors.blue),
+              Icon(Icons.compare_rounded, color: AppColors.blue),
               const SizedBox(width: 8),
               Expanded(
                 child: Text('Deslizador: Antes vs Ahora', style: t.titleSmall),
               ),
-              const Flexible(
+              Flexible(
                 child: Pill(
                   label: '¡Desliza con tu dedo!',
                   dense: true,
@@ -628,7 +628,7 @@ class _BeforeAfterSectionState extends State<BeforeAfterSection> {
                                   ),
                                 ],
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.unfold_more_rounded,
                                 color: AppColors.blue,
                                 size: 24,
@@ -732,7 +732,7 @@ class _GuardianChecklistState extends ConsumerState<GuardianChecklist> {
         children: [
           Row(
             children: [
-              const IconBubble(
+              IconBubble(
                 icon: Icons.shield_outlined,
                 color: AppColors.greenDeep,
                 foreground: Colors.white,
@@ -804,7 +804,7 @@ class _CheckRow extends StatelessWidget {
           curve: AppMotion.easeOut,
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           decoration: BoxDecoration(
-            color: checked ? AppColors.mintSoft : Colors.white,
+            color: checked ? AppColors.mintSoft : AppColors.surface,
             borderRadius: BorderRadius.circular(18),
             border: Border.all(
               color: checked ? AppColors.green : AppColors.mint,
@@ -819,7 +819,7 @@ class _CheckRow extends StatelessWidget {
                 width: 28,
                 height: 28,
                 decoration: BoxDecoration(
-                  color: checked ? AppColors.green : Colors.white,
+                  color: checked ? AppColors.green : AppColors.surface,
                   shape: BoxShape.circle,
                   border: Border.all(color: AppColors.green, width: 2),
                 ),
@@ -924,7 +924,7 @@ class _PlaceQuizState extends ConsumerState<PlaceQuiz> {
         children: [
           Row(
             children: [
-              const IconBubble(
+              IconBubble(
                 icon: Icons.track_changes_rounded,
                 color: AppColors.teal,
                 foreground: Colors.white,
@@ -942,7 +942,7 @@ class _PlaceQuizState extends ConsumerState<PlaceQuiz> {
                     ? 'Completado'
                     : '+${Economy.quizFirstTry} Gotitas',
                 dense: true,
-                color: Colors.white,
+                color: AppColors.surface,
               ),
             ],
           ),
@@ -951,7 +951,7 @@ class _PlaceQuizState extends ConsumerState<PlaceQuiz> {
             width: double.infinity,
             padding: const EdgeInsets.all(14),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.surface,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(quiz.question, style: t.titleSmall),
@@ -1022,7 +1022,11 @@ class _OptionTile extends StatelessWidget {
         AppColors.greenDeep,
       ),
       _OptionState.wrong => (AppColors.redSoft, AppColors.red, AppColors.red),
-      _OptionState.idle => (Colors.white, Colors.white, AppColors.surfaceBlue),
+      _OptionState.idle => (
+        AppColors.surface,
+        AppColors.surface,
+        AppColors.surfaceBlue,
+      ),
     };
     return Pressable(
       onTap: onTap,

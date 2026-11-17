@@ -206,7 +206,7 @@ class _RiverPuzzleGameState extends ConsumerState<RiverPuzzleGame> {
                 onTapDown: (_) => setState(() => _peek = true),
                 onTapUp: (_) => setState(() => _peek = false),
                 onTapCancel: () => setState(() => _peek = false),
-                child: const Pill(
+                child: Pill(
                   label: 'Ver foto',
                   icon: Icons.visibility_outlined,
                   color: AppColors.cyanSoft,

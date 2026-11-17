@@ -199,7 +199,7 @@ class _LibraryScreenState extends ConsumerState<LibraryScreen> {
                             AnimatedRotation(
                               turns: _open == i ? 0.5 : 0,
                               duration: AppMotion.of(context, AppMotion.fast),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.expand_more_rounded,
                                 color: AppColors.inkMuted,
                               ),

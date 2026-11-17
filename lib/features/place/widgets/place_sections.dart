@@ -19,8 +19,8 @@ class ListenButton extends ConsumerWidget {
     required this.id,
     required this.text,
     this.label = 'Escuchar',
-    this.color = AppColors.yellow,
-    this.foreground = AppColors.amberInk,
+    this._color,
+    this._foreground,
     this.compact = false,
   });
 
@@ -30,8 +30,10 @@ class ListenButton extends ConsumerWidget {
   final String id;
   final String text;
   final String label;
-  final Color color;
-  final Color foreground;
+  final Color? _color;
+  Color get color => _color ?? AppColors.yellow;
+  final Color? _foreground;
+  Color get foreground => _foreground ?? AppColors.amberInk;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -383,10 +385,7 @@ class TimelineSection extends StatelessWidget {
                     Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        const Icon(
-                          Icons.headphones_rounded,
-                          color: AppColors.blue,
-                        ),
+                        Icon(Icons.headphones_rounded, color: AppColors.blue),
                         const SizedBox(width: 8),
                         Text('Relato sonoro', style: t.titleSmall),
                       ],
@@ -413,7 +412,7 @@ class TimelineSection extends StatelessWidget {
                             width: 14,
                             height: 14,
                             margin: const EdgeInsets.only(top: 4),
-                            decoration: const BoxDecoration(
+                            decoration: BoxDecoration(
                               color: AppColors.blue,
                               shape: BoxShape.circle,
                             ),
@@ -608,7 +607,7 @@ class VoicesSection extends StatelessWidget {
 
   final Place place;
 
-  static const _tints = [
+  static final _tints = [
     AppColors.cyanSoft,
     AppColors.mintSoft,
     AppColors.yellowSoft,

@@ -288,7 +288,7 @@ class _WasteChip extends StatelessWidget {
       width: 150,
       padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.surface,
         borderRadius: BorderRadius.circular(26),
         boxShadow: [
           BoxShadow(

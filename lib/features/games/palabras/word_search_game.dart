@@ -284,7 +284,7 @@ class _WordSearchGameState extends ConsumerState<WordSearchGame> {
                   decoration: BoxDecoration(
                     color: foundWords.contains(w)
                         ? _colors[i % _colors.length].withValues(alpha: 0.25)
-                        : Colors.white,
+                        : AppColors.surface,
                     borderRadius: BorderRadius.circular(999),
                     border: Border.all(
                       color: foundWords.contains(w)
@@ -297,7 +297,7 @@ class _WordSearchGameState extends ConsumerState<WordSearchGame> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (foundWords.contains(w)) ...[
-                        const Icon(
+                        Icon(
                           Icons.check_rounded,
                           size: 16,
                           color: AppColors.greenDeep,

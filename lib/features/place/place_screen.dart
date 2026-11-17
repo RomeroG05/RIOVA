@@ -166,13 +166,13 @@ class _Hero extends StatelessWidget {
                 foreground: Colors.white,
               ),
             ),
-            const Positioned(
+            Positioned(
               right: 14,
               top: 14,
               child: Pill(
                 label: 'En Vivo',
                 icon: Icons.circle,
-                color: Colors.white,
+                color: AppColors.surface,
                 foreground: AppColors.greenDeep,
                 dense: true,
               ),

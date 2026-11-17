@@ -122,7 +122,7 @@ class _RewardDialogState extends State<_RewardDialog>
                 margin: const EdgeInsets.only(top: 64),
                 padding: const EdgeInsets.fromLTRB(22, 86, 22, 20),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: AppColors.surface,
                   borderRadius: BorderRadius.circular(32),
                 ),
                 child: SingleChildScrollView(
@@ -245,15 +245,12 @@ class _RewardDialogState extends State<_RewardDialog>
 }
 
 class _GotitasLine extends StatelessWidget {
-  const _GotitasLine({
-    required this.value,
-    required this.label,
-    this.color = AppColors.teal,
-  });
+  const _GotitasLine({required this.value, required this.label, this._color});
 
   final int value;
   final String label;
-  final Color color;
+  final Color? _color;
+  Color get color => _color ?? AppColors.teal;
 
   @override
   Widget build(BuildContext context) {
@@ -333,7 +330,7 @@ class ConfettiPainter extends CustomPainter {
   ConfettiPainter(this.t);
 
   final double t;
-  static const _colors = [
+  static final _colors = [
     AppColors.cyan,
     AppColors.green,
     AppColors.yellow,

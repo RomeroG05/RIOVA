@@ -11,6 +11,7 @@ import '../../features/map/map_screen.dart';
 import '../../features/onboarding/create_explorer_screen.dart';
 import '../../features/onboarding/welcome_screen.dart';
 import '../../features/place/place_screen.dart';
+import '../../features/profile/settings_screen.dart';
 import '../../features/profile/store_screen.dart';
 import '../../features/profile/profile_screen.dart';
 import '../../features/qr/qr_codes_screen.dart';
@@ -29,6 +30,7 @@ abstract final class Routes {
   static const games = '/juegos';
   static const profile = '/perfil';
   static const store = '/perfil/tienda';
+  static const settings = '/perfil/ajustes';
   static const qrCodes = '/codigos';
 
   static String place(String id) => '/mapa/lugar/$id';
@@ -114,6 +116,10 @@ final routerProvider = Provider<GoRouter>((ref) {
                   GoRoute(
                     path: 'tienda',
                     builder: (_, _) => const StoreScreen(),
+                  ),
+                  GoRoute(
+                    path: 'ajustes',
+                    builder: (_, _) => const SettingsScreen(),
                   ),
                 ],
               ),

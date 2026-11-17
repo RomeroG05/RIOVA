@@ -477,7 +477,7 @@ class RioSays extends StatelessWidget {
         Container(
           width: 56,
           height: 56,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             color: AppColors.cyanSoft,
             shape: BoxShape.circle,
           ),
@@ -493,8 +493,8 @@ class RioSays extends StatelessWidget {
         Expanded(
           child: Container(
             padding: const EdgeInsets.fromLTRB(16, 12, 16, 14),
-            decoration: const BoxDecoration(
-              color: Colors.white,
+            decoration: BoxDecoration(
+              color: AppColors.surface,
               borderRadius: BorderRadius.only(
                 topRight: Radius.circular(20),
                 bottomLeft: Radius.circular(20),

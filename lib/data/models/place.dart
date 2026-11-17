@@ -37,56 +37,58 @@ enum ProblemKind {
   contaminacion(
     'Contaminación',
     Icons.water_drop_outlined,
-    AppColors.red,
     'Usa los basureros y nunca tires nada al río.',
   ),
   basura(
     'Basura y escombros',
     Icons.delete_outline_rounded,
-    AppColors.red,
     'Lleva tu basura a casa si no hay basurero cerca.',
   ),
   inundacion(
     'Inundaciones',
     Icons.thunderstorm_outlined,
-    AppColors.blue,
     'Aléjate de la orilla cuando llueve fuerte.',
   ),
   erosion(
     'Erosión',
     Icons.landslide_outlined,
-    AppColors.amberInk,
     'Cuida los árboles de la orilla: sus raíces sujetan la tierra.',
   ),
   abandono(
     'Espacios abandonados',
     Icons.park_outlined,
-    AppColors.greenDeep,
     'Usa y cuida los parques: un lugar querido se mantiene vivo.',
   ),
   inseguridad(
     'Inseguridad',
     Icons.nightlight_outlined,
-    AppColors.inkSoft,
     'Pasea por el río de día y siempre acompañado.',
   ),
   olores(
     'Malos olores',
     Icons.air_rounded,
-    AppColors.orange,
     'Avisa a un adulto si ves tuberías vertiendo agua sucia al río.',
   ),
   muros(
     'Río encerrado',
     Icons.fence_rounded,
-    AppColors.blue,
     'Los ríos necesitan espacio y orillas verdes, no solo muros.',
   );
 
-  const ProblemKind(this.title, this.icon, this.color, this.help);
+  const ProblemKind(this.title, this.icon, this.help);
   final String title;
   final IconData icon;
-  final Color color;
+
+  Color get color => switch (this) {
+    contaminacion => AppColors.red,
+    basura => AppColors.red,
+    inundacion => AppColors.blue,
+    erosion => AppColors.amberInk,
+    abandono => AppColors.greenDeep,
+    inseguridad => AppColors.inkSoft,
+    olores => AppColors.orange,
+    muros => AppColors.blue,
+  };
   final String help;
 }
 
