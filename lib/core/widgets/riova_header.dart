@@ -91,11 +91,10 @@ class _GotitasBadgeState extends ConsumerState<GotitasBadge>
   }
 }
 
-/// Botón circular con el avatar del explorador; abre el perfil.
+/// Botón circular con el avatar del explorador (y su sombrero) que se ve
+/// en la barra de todas las pantallas; abre el perfil.
 class ProfileButton extends ConsumerWidget {
-  const ProfileButton({super.key, this.showEmoji = false});
-
-  final bool showEmoji;
+  const ProfileButton({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -111,7 +110,7 @@ class ProfileButton extends ConsumerWidget {
         height: 48,
         child: Center(
           child: WithHat(
-            hatId: showEmoji ? hat : null,
+            hatId: avatar == null ? null : hat,
             size: 40,
             child: Container(
               width: 40,
@@ -121,7 +120,7 @@ class ProfileButton extends ConsumerWidget {
                 shape: BoxShape.circle,
               ),
               alignment: Alignment.center,
-              child: showEmoji && avatar != null
+              child: avatar != null
                   ? Text(avatar.emoji, style: const TextStyle(fontSize: 20))
                   : const Icon(
                       Icons.person_outline_rounded,
@@ -263,7 +262,7 @@ class RiovaBackBar extends StatelessWidget implements PreferredSizeWidget {
           filled: true,
         ),
         const SizedBox(width: 6),
-        const ProfileButton(showEmoji: true),
+        const ProfileButton(),
         const SizedBox(width: 10),
       ],
     );
