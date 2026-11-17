@@ -17,6 +17,7 @@ import '../../state/tts_service.dart';
 import 'widgets/place_sections.dart';
 import 'widgets/place_interactive.dart';
 import '../../state/content_revision.dart';
+import '../../data/content/economy.dart';
 
 /// Pantalla "Explorando [lugar]": ficha educativa del sector.
 class PlaceScreen extends ConsumerStatefulWidget {
@@ -220,7 +221,7 @@ class _RegisterCta extends StatelessWidget {
           Text('¿Estás en ${place.shortName}?', style: t.titleLarge),
           const SizedBox(height: 4),
           Text(
-            'Escanea el tótem del sendero para ganar el sello oficial y +30 gotitas.',
+            'Escanea el tótem del sendero para ganar el sello oficial y +${Economy.visit} gotitas.',
             style: t.bodyMedium,
           ),
           const SizedBox(height: 14),

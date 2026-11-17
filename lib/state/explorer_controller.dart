@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/utils/day_key.dart';
+import '../data/content/economy.dart';
 import '../data/content/game_content.dart';
 import '../data/content/hat_content.dart';
 import '../data/content/places_content.dart';
@@ -177,12 +178,15 @@ class ExplorerController extends Notifier<ExplorerState> {
     );
   }
 
-  /// Visita validada con el QR del tótem: +30 la primera vez.
+  /// Visita validada con el QR del tótem (solo la primera vez).
   RewardOutcome registerVisit(Place place) {
     final p = state.progress;
     if (p.visited.contains(place.id)) return const RewardOutcome();
     _log.visit(place);
-    return _reward(p.copyWith(visited: {...p.visited, place.id}), earned: 30);
+    return _reward(
+      p.copyWith(visited: {...p.visited, place.id}),
+      earned: Economy.visit,
+    );
   }
 
   RewardOutcome completeGame(GameId id, {required bool won, int score = 0}) {
@@ -195,7 +199,15 @@ class ExplorerController extends Notifier<ExplorerState> {
       return const RewardOutcome();
     }
     final firstTime = !p.completedGames.contains(id.name);
-    final earned = firstTime ? gameById(id).reward : GameInfo.replayReward;
+    // Repetir un juego ya ganado da poco y con tope diario.
+    final replayedToday = p.replayDay == _today ? p.replayEarned : 0;
+    final replay = firstTime
+        ? 0
+        : math.max(
+            0,
+            math.min(Economy.replay, Economy.replayDailyCap - replayedToday),
+          );
+    final earned = firstTime ? gameById(id).reward : replay;
 
     var bonus = 0;
     var missionCompleted = p.missionCompleted;
@@ -211,30 +223,32 @@ class ExplorerController extends Notifier<ExplorerState> {
         completedGames: {...p.completedGames, id.name},
         bestScores: best,
         missionCompleted: missionCompleted,
+        replayDay: firstTime ? null : _today,
+        replayEarned: firstTime ? null : replayedToday + replay,
       ),
       earned: earned,
       missionBonus: bonus,
     );
   }
 
-  /// Pregunta de repaso de un lugar: +15 si acierta a la primera, +5 si no.
+  /// Pregunta de repaso de un lugar (una vez): más si acierta a la primera.
   RewardOutcome answerQuiz(Place place, {required bool firstTry}) {
     final p = state.progress;
     if (p.quizzes.contains(place.id)) return const RewardOutcome();
     _log.quiz(place, firstTry: firstTry);
     return _reward(
       p.copyWith(quizzes: {...p.quizzes, place.id}),
-      earned: firstTry ? 15 : 5,
+      earned: firstTry ? Economy.quizFirstTry : Economy.quizRetry,
     );
   }
 
-  /// Lista "¡Sé Guardián del Río!" completa: +10 una vez por lugar.
+  /// Lista "¡Sé Guardián del Río!" completa: una vez por lugar.
   RewardOutcome completeChecklist(Place place) {
     final p = state.progress;
     if (p.checklists.contains(place.id)) return const RewardOutcome();
     return _reward(
       p.copyWith(checklists: {...p.checklists, place.id}),
-      earned: 10,
+      earned: Economy.checklist,
     );
   }
 

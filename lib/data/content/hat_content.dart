@@ -27,26 +27,27 @@ const hats = <HatInfo>[
   HatInfo(
     id: 'gorra_explorador',
     name: 'Gorra de Explorador',
-    price: 40,
+    price: 60,
     description: 'Para recorrer los senderos del río con el sol a la espalda.',
   ),
   HatInfo(
     id: 'pescador',
     name: 'Sombrero de Pescador',
-    price: 60,
+    price: 90,
     description: 'Como el de quienes esperan ver truchas en aguas limpias.',
   ),
   HatInfo(
     id: 'chullo',
     name: 'Chullo Andino',
-    price: 80,
+    price: 120,
     description:
         'Gorro de lana con orejeras, perfecto para las mañanas frías de Loja.',
+    minLevel: 2,
   ),
   HatInfo(
     id: 'guardaparques',
     name: 'Casco de Guardaparques',
-    price: 100,
+    price: 160,
     description:
         'El sombrero de quienes cuidan los bosques que guardan el agua.',
     minLevel: 2,
@@ -54,45 +55,45 @@ const hats = <HatInfo>[
   HatInfo(
     id: 'detective',
     name: 'Gorro de Detective',
-    price: 120,
+    price: 200,
     description: 'Ideal para investigar por qué se inunda el río.',
-    minLevel: 2,
+    minLevel: 3,
   ),
   HatInfo(
     id: 'corona_sauce',
     name: 'Corona de Sauce',
-    price: 150,
+    price: 260,
     description: 'Hecha con hojas de sauce, el árbol que protege las orillas.',
     minLevel: 3,
   ),
   HatInfo(
     id: 'paja_toquilla',
     name: 'Sombrero de Paja Toquilla',
-    price: 200,
+    price: 330,
     description: 'El clásico sombrero ecuatoriano, tejido a mano.',
-    minLevel: 3,
+    minLevel: 4,
   ),
   HatInfo(
     id: 'boina_musical',
     name: 'Boina Musical',
-    price: 250,
+    price: 400,
     description: 'Loja es la capital musical del Ecuador. ¡Que suene el río!',
-    minLevel: 4,
+    minLevel: 5,
   ),
   HatInfo(
     id: 'colibri',
     name: 'Gorro de Colibrí',
-    price: 300,
+    price: 500,
     description:
         'Inspirado en los colibríes que visitan las flores de la ribera.',
-    minLevel: 5,
+    minLevel: 6,
   ),
   HatInfo(
     id: 'corona_gotitas',
     name: 'Corona de Gotitas',
-    price: 400,
+    price: 650,
     description: 'Legendaria: solo para los grandes guardianes del agua.',
-    minLevel: 6,
+    minLevel: 7,
   ),
 ];
 

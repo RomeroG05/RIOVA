@@ -15,6 +15,7 @@ import '../../../data/content/places_content.dart';
 import '../../../data/models/place.dart';
 import '../../../state/explorer_controller.dart';
 import '../../../core/widgets/two_column_grid.dart';
+import '../../../data/content/economy.dart';
 
 // ───────────── ¡Investiguemos el río! ─────────────
 
@@ -745,7 +746,7 @@ class _GuardianChecklistState extends ConsumerState<GuardianChecklist> {
                     Text('¡Sé Guardián del Río!', style: t.titleLarge),
                     Text(
                       done
-                          ? '¡Lista completada! +10 gotitas'
+                          ? '¡Lista completada! +${Economy.checklist} gotitas'
                           : 'Marca las 4 acciones cumplidas:',
                       style: t.labelMedium?.copyWith(
                         color: AppColors.greenDeep,
@@ -937,7 +938,9 @@ class _PlaceQuizState extends ConsumerState<PlaceQuiz> {
                 ),
               ),
               Pill(
-                label: answered ? 'Completado' : '+15 Gotitas',
+                label: answered
+                    ? 'Completado'
+                    : '+${Economy.quizFirstTry} Gotitas',
                 dense: true,
                 color: Colors.white,
               ),

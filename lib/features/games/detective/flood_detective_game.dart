@@ -903,7 +903,7 @@ class _ToolsPanel extends StatelessWidget {
                 ),
               ),
               const Pill(
-                label: '+15 Gotitas XP',
+                label: 'Elige una',
                 color: AppColors.mintSoft,
                 foreground: AppColors.greenDeep,
                 dense: true,

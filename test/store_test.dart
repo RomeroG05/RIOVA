@@ -21,27 +21,28 @@ ProviderContainer _container(ProgressRepository repo) {
 void main() {
   test('comprar gasta gotitas disponibles pero no baja el nivel', () {
     final repo = InMemoryProgressRepository(
-      progress: const ExplorerProgress(gotitas: 210),
+      progress: const ExplorerProgress(gotitas: 300), // Nivel 3
     );
     final c = _container(repo);
     final ctrl = c.read(explorerProvider.notifier);
-    final levelBefore = c.read(explorerProvider).level.level; // 210 → Nivel 3
+    final levelBefore = c.read(explorerProvider).level.level;
+    expect(levelBefore, 3);
 
-    expect(ctrl.buyHat(hatById('paja_toquilla')!), HatPurchase.bought); // 200
+    expect(ctrl.buyHat(hatById('detective')!), HatPurchase.bought); // 200
     final p = c.read(explorerProvider).progress;
-    expect(p.wallet, 10);
-    expect(p.gotitas, 210);
+    expect(p.wallet, 100);
+    expect(p.gotitas, 300);
     expect(c.read(explorerProvider).level.level, levelBefore);
-    expect(p.equippedHat, 'paja_toquilla');
+    expect(p.equippedHat, 'detective');
 
-    expect(ctrl.buyHat(hatById('gorra_explorador')!), HatPurchase.notEnough);
-    expect(ctrl.buyHat(hatById('paja_toquilla')!), HatPurchase.alreadyOwned);
+    expect(ctrl.buyHat(hatById('chullo')!), HatPurchase.notEnough); // 120
+    expect(ctrl.buyHat(hatById('detective')!), HatPurchase.alreadyOwned);
 
     // Se guarda y se recupera (también es lo que se sube a Firebase).
     final restored = repo.loadProgress();
     expect(restored.spent, 200);
-    expect(restored.ownedHats, {'paja_toquilla'});
-    expect(restored.equippedHat, 'paja_toquilla');
+    expect(restored.ownedHats, {'detective'});
+    expect(restored.equippedHat, 'detective');
   });
 
   test('ponerse y quitarse un sombrero; no se puede poner uno no comprado', () {
@@ -64,29 +65,29 @@ void main() {
   });
 
   test('los sombreros de nivel alto no se compran antes de tiempo', () {
-    // 450 gotitas = Nivel 4: alcanza para la Corona (400) pero pide Nivel 6.
+    // 700 gotitas = Nivel 4: alcanza para la Corona (650) pero pide Nivel 7.
     final c = _container(
       InMemoryProgressRepository(
-        progress: const ExplorerProgress(gotitas: 450),
+        progress: const ExplorerProgress(gotitas: 700),
       ),
     );
     final ctrl = c.read(explorerProvider.notifier);
     expect(c.read(explorerProvider).level.level, 4);
     expect(ctrl.buyHat(hatById('corona_gotitas')!), HatPurchase.levelLocked);
     expect(ctrl.buyHat(hatById('colibri')!), HatPurchase.levelLocked);
-    expect(ctrl.buyHat(hatById('boina_musical')!), HatPurchase.bought);
-    expect(c.read(explorerProvider).progress.wallet, 200);
+    expect(ctrl.buyHat(hatById('paja_toquilla')!), HatPurchase.bought); // 330
+    expect(c.read(explorerProvider).progress.wallet, 370);
   });
 
   test('subir de nivel avisa los sombreros nuevos de la tienda', () {
     final c = _container(
-      InMemoryProgressRepository(progress: const ExplorerProgress(gotitas: 60)),
+      InMemoryProgressRepository(progress: const ExplorerProgress(gotitas: 80)),
     );
     final out = c
         .read(explorerProvider.notifier)
-        .completeGame(GameId.quiz, won: true); // +30 → 90 = Nivel 2
+        .completeGame(GameId.quiz, won: true); // +20 → 100 = Nivel 2
     expect(out.levelUp?.level, 2);
-    expect(out.newHats.map((h) => h.id), ['guardaparques', 'detective']);
+    expect(out.newHats.map((h) => h.id), ['chullo', 'guardaparques']);
   });
 
   test('10 sombreros con id único y precios crecientes', () {

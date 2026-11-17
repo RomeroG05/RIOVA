@@ -6,6 +6,7 @@ import '../../core/illustrations/scene_painter.dart';
 import '../../core/widgets/chunky_button.dart';
 import '../models/explorer.dart';
 import '../models/place.dart';
+import 'economy.dart';
 import 'places_content.dart';
 
 enum GameId {
@@ -104,8 +105,9 @@ class GameInfo {
   bool unlockedFor(ExplorerProgress p) =>
       unlock.met(p) || p.completedGames.contains(id.name);
 
-  /// Gotitas por repetir un juego ya completado (evita "granjear" XP).
-  static const replayReward = 10;
+  /// Gotitas por repetir un juego ya ganado (con tope diario, ver
+  /// `Economy.replayDailyCap`).
+  static const replayReward = Economy.replay;
 }
 
 const games = <GameInfo>[
@@ -115,7 +117,7 @@ const games = <GameInfo>[
     title: 'Rescata el Río',
     description: 'Recoge la basura y devuelve la vida al río Malacatos.',
     easy: true,
-    reward: 50,
+    reward: 25,
     icon: Icons.cleaning_services_outlined,
     cta: '¡Jugar!',
     ctaIcon: Icons.play_circle_outline_rounded,
@@ -128,7 +130,7 @@ const games = <GameInfo>[
     title: '¿Cuánto sabes de Loja?',
     description: 'Responde preguntas y demuestra cuánto sabes sobre los ríos.',
     easy: true,
-    reward: 30,
+    reward: 20,
     icon: Icons.quiz_outlined,
     cta: '¡Responder!',
     ctaIcon: Icons.question_answer_outlined,
@@ -143,7 +145,7 @@ const games = <GameInfo>[
     description:
         'Investiga qué provoca las inundaciones y encuentra las causas.',
     easy: false,
-    reward: 60,
+    reward: 35,
     icon: Icons.manage_search_rounded,
     cta: '¡Investigar!',
     ctaIcon: Icons.search_rounded,
@@ -158,7 +160,7 @@ const games = <GameInfo>[
     description:
         'Encuentra las palabras escondidas antes de completar el desafío.',
     easy: false,
-    reward: 40,
+    reward: 25,
     icon: Icons.spellcheck_rounded,
     cta: '¡Buscar!',
     ctaIcon: Icons.find_in_page_outlined,
@@ -174,7 +176,7 @@ const games = <GameInfo>[
     description:
         'Guía el agua por el camino correcto hasta llegar al río Zamora.',
     easy: true,
-    reward: 40,
+    reward: 25,
     icon: Icons.alt_route_rounded,
     cta: '¡Comenzar!',
     ctaIcon: Icons.navigation_outlined,
@@ -189,7 +191,7 @@ const games = <GameInfo>[
     description:
         'Descubre las plantas y animales que viven junto a nuestros ríos.',
     easy: false,
-    reward: 50,
+    reward: 30,
     icon: Icons.forest_outlined,
     cta: '¡Descubrir!',
     ctaIcon: Icons.travel_explore_rounded,
@@ -205,7 +207,7 @@ const games = <GameInfo>[
     description:
         'Desliza cada tarjeta: ¿verdadero o falso? Descubre los mitos del río.',
     easy: true,
-    reward: 40,
+    reward: 25,
     icon: Icons.swipe_rounded,
     cta: '¡Deslizar!',
     ctaIcon: Icons.swipe_right_alt_rounded,
@@ -221,7 +223,7 @@ const games = <GameInfo>[
     description:
         'Arrastra cada residuo al tacho correcto antes de que llegue al río.',
     easy: false,
-    reward: 50,
+    reward: 30,
     icon: Icons.recycling_rounded,
     cta: '¡Reciclar!',
     ctaIcon: Icons.pan_tool_alt_outlined,
@@ -237,7 +239,7 @@ const games = <GameInfo>[
     description:
         'Ordena las piezas y descubre fotos reales de los sectores de Loja.',
     easy: false,
-    reward: 60,
+    reward: 35,
     icon: Icons.extension_outlined,
     cta: '¡Armar!',
     ctaIcon: Icons.grid_view_rounded,
@@ -471,7 +473,7 @@ class DailyMission {
     required this.title,
     required this.description,
     required this.game,
-    this.reward = 50,
+    this.reward = Economy.missionBonus,
     this.emoji = '🌊',
   });
 

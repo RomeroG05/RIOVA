@@ -20,6 +20,7 @@ import '../onboarding/create_explorer_screen.dart';
 import '../../core/widgets/two_column_grid.dart';
 import '../../core/widgets/hat.dart';
 import '../../data/content/hat_content.dart';
+import '../../data/content/economy.dart';
 
 /// Pantalla "Mi perfil".
 class ProfileScreen extends ConsumerWidget {
@@ -443,13 +444,15 @@ class _IdentityCard extends ConsumerWidget {
                         style: t.titleSmall?.copyWith(color: Colors.white),
                       ),
                     ),
-                    Pill(
-                      label: level.isMax
-                          ? '${level.gotitas} gotitas XP'
-                          : '${level.gotitas} / ${level.next!.threshold} gotitas XP',
-                      color: const Color(0x33FFFFFF),
-                      foreground: Colors.white,
-                      dense: true,
+                    Flexible(
+                      child: Pill(
+                        label: level.isMax
+                            ? '${level.gotitas} XP'
+                            : '${level.gotitas} / ${level.next!.threshold} XP',
+                        color: const Color(0x33FFFFFF),
+                        foreground: Colors.white,
+                        dense: true,
+                      ),
                     ),
                   ],
                 ),
@@ -583,7 +586,7 @@ class _StreakCard extends StatelessWidget {
                 ),
                 if (missionDone)
                   const Pill(
-                    label: '+50 XP GANADOS',
+                    label: '+${Economy.missionBonus} GOTITAS',
                     color: AppColors.mint,
                     foreground: AppColors.greenDeep,
                     dense: true,

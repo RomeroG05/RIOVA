@@ -16,6 +16,7 @@ import '../../core/widgets/riova_header.dart';
 import '../../data/content/places_content.dart';
 import '../../data/models/place.dart';
 import '../../state/explorer_controller.dart';
+import '../../data/content/economy.dart';
 
 /// Pantalla "Escanear QR" (Registrar Parada Fluvial).
 class ScanQrScreen extends ConsumerStatefulWidget {
@@ -347,7 +348,7 @@ class _StopCard extends ConsumerWidget {
                                   text: 'Recompensa: ',
                                   children: [
                                     TextSpan(
-                                      text: '+30 Gotitas XP',
+                                      text: '+${Economy.visit} Gotitas XP',
                                       style: TextStyle(color: AppColors.blue),
                                     ),
                                     TextSpan(text: ' y sello oficial'),

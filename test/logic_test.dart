@@ -6,7 +6,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:riova/data/models/place.dart';
 import 'package:riova/core/utils/day_key.dart';
+import 'package:riova/data/content/economy.dart';
 import 'package:riova/data/content/game_content.dart';
+import 'package:riova/data/content/hat_content.dart';
 import 'package:riova/data/content/places_content.dart';
 import 'package:riova/data/models/explorer.dart';
 import 'package:riova/data/remote/place_codec.dart';
@@ -132,10 +134,12 @@ void main() {
   group('Niveles', () {
     test('umbrales', () {
       expect(LevelProgress.of(0).level, 1);
-      expect(LevelProgress.of(79).level, 1);
-      expect(LevelProgress.of(80).level, 2);
-      expect(LevelProgress.of(240).level, 3);
-      expect(LevelProgress.of(240).remaining, 110);
+      expect(LevelProgress.of(99).level, 1);
+      expect(LevelProgress.of(100).level, 2);
+      expect(LevelProgress.of(300).level, 3);
+      expect(LevelProgress.of(300).remaining, 180);
+      expect(LevelProgress.of(2199).level, 7);
+      expect(LevelProgress.of(2200).level, 8);
       expect(LevelProgress.of(99999).isMax, isTrue);
     });
   });
@@ -159,17 +163,17 @@ void main() {
         final c = _container();
         final ctrl = c.read(explorerProvider.notifier);
         final first = ctrl.registerVisit(placeById('tebaida'));
-        expect(first.gotitas, 30);
+        expect(first.gotitas, Economy.visit);
         expect(first.newMedals.map((m) => m.id), contains('primera_huella'));
         expect(ctrl.registerVisit(placeById('tebaida')).isEmpty, isTrue);
-        expect(c.read(explorerProvider).progress.gotitas, 30);
+        expect(c.read(explorerProvider).progress.gotitas, Economy.visit);
       },
     );
 
     test('juego: recompensa completa la primera vez, reducida al repetir', () {
       final c = _container();
       final ctrl = c.read(explorerProvider.notifier);
-      expect(ctrl.completeGame(GameId.detective, won: true).gotitas, 60);
+      expect(ctrl.completeGame(GameId.detective, won: true).gotitas, 35);
       expect(
         ctrl.completeGame(GameId.detective, won: true).gotitas,
         GameInfo.replayReward,
@@ -200,7 +204,7 @@ void main() {
         ..registerVisit(placeById('capuli1'))
         ..answerQuiz(placeById('capuli1'), firstTry: true);
       final restored = repo.loadProgress();
-      expect(restored.gotitas, 45);
+      expect(restored.gotitas, Economy.visit + Economy.quizFirstTry);
       expect(restored.visited, contains('capuli1'));
     });
 
@@ -243,11 +247,20 @@ void main() {
     test('subir de nivel desbloquea minijuegos y medallas de nivel', () {
       final c = _container();
       final ctrl = c.read(explorerProvider.notifier);
-      ctrl.completeGame(GameId.rescata, won: true); // +50
+      ctrl.completeGame(GameId.rescata, won: true); // +25
+      ctrl.completeGame(GameId.quiz, won: true); // +20 → 45
+      ctrl.answerQuiz(placeById('tebaida'), firstTry: true); // +10 → 55
+      ctrl.answerQuiz(placeById('capuli1'), firstTry: true); // +10 → 65
+      ctrl.completeChecklist(placeById('tebaida')); // +5 → 70
+      ctrl.acceptMission();
+      final mission = missionFor(
+        DateTime.now(),
+        c.read(explorerProvider).progress,
+      );
       final out = ctrl.completeGame(
-        GameId.quiz,
+        mission.game,
         won: true,
-      ); // +30 → 80 = Nivel 2
+      ); // repetir +5 y misión +30 → 105 = Nivel 2
       expect(out.levelUp?.level, 2);
       expect(
         out.newGames.map((g) => g.id),
@@ -289,6 +302,50 @@ void main() {
         expect([GameId.rescata, GameId.quiz], contains(m.game));
       }
     });
+  });
+
+  group('Balance de la economía', () {
+    test('repetir un juego da poco y tiene tope diario', () {
+      final c = _container();
+      final ctrl = c.read(explorerProvider.notifier);
+      ctrl.completeGame(GameId.rescata, won: true);
+      var replays = 0;
+      for (var i = 0; i < 30; i++) {
+        replays += ctrl.completeGame(GameId.rescata, won: true).gotitas;
+      }
+      expect(replays, Economy.replayDailyCap);
+    });
+
+    test(
+      'el contenido de una sola vez no alcanza para todos los sombreros',
+      () {
+        final oneTime =
+            places.length *
+                (Economy.visit + Economy.quizFirstTry + Economy.checklist) +
+            games.fold<int>(0, (s, g) => s + g.reward);
+        final hatsTotal = hats.fold<int>(0, (s, h) => s + h.price);
+        expect(hatsTotal, greaterThan(oneTime * 3));
+        // ...pero el primer sombrero sí se consigue el primer día:
+        // los 2 juegos iniciales + preguntas de la Zona Sur + misión.
+        final firstDay =
+            gameById(GameId.rescata).reward +
+            gameById(GameId.quiz).reward +
+            4 * Economy.quizFirstTry +
+            Economy.missionBonus;
+        expect(hats.first.price, lessThanOrEqualTo(firstDay));
+      },
+    );
+
+    test(
+      'el nivel máximo exige mucho más que el contenido de una sola vez',
+      () {
+        final oneTime =
+            places.length *
+                (Economy.visit + Economy.quizFirstTry + Economy.checklist) +
+            games.fold<int>(0, (s, g) => s + g.reward);
+        expect(levels.last.threshold, greaterThan(oneTime * 2));
+      },
+    );
   });
 
   group('El Camino del Agua', () {

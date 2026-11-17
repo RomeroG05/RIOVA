@@ -66,6 +66,8 @@ class ExplorerProgress {
     this.spent = 0,
     this.ownedHats = const {},
     this.equippedHat,
+    this.replayDay,
+    this.replayEarned = 0,
   });
 
   /// Gotitas GANADAS en total (experiencia, XP). Nunca bajan: definen el
@@ -81,6 +83,10 @@ class ExplorerProgress {
   /// Sombreros comprados y el que lleva puesto el avatar (o `null`).
   final Set<String> ownedHats;
   final String? equippedHat;
+
+  /// Gotitas ganadas hoy por repetir juegos (para el tope diario).
+  final String? replayDay;
+  final int replayEarned;
   final Set<String> visited;
   final Set<String> completedGames;
   final Map<String, int> bestScores;
@@ -109,6 +115,8 @@ class ExplorerProgress {
     int? spent,
     Set<String>? ownedHats,
     Object? equippedHat = _keep,
+    String? replayDay,
+    int? replayEarned,
   }) => ExplorerProgress(
     gotitas: gotitas ?? this.gotitas,
     visited: visited ?? this.visited,
@@ -122,6 +130,8 @@ class ExplorerProgress {
     missionCompleted: missionCompleted ?? this.missionCompleted,
     spent: spent ?? this.spent,
     ownedHats: ownedHats ?? this.ownedHats,
+    replayDay: replayDay ?? this.replayDay,
+    replayEarned: replayEarned ?? this.replayEarned,
     equippedHat: identical(equippedHat, _keep)
         ? this.equippedHat
         : equippedHat as String?,
@@ -143,6 +153,8 @@ class ExplorerProgress {
     'spent': spent,
     'ownedHats': ownedHats.toList(),
     'equippedHat': equippedHat,
+    'replayDay': replayDay,
+    'replayEarned': replayEarned,
   };
 
   factory ExplorerProgress.fromJson(Map<String, Object?> json) {
@@ -164,6 +176,8 @@ class ExplorerProgress {
       spent: (json['spent'] as num?)?.toInt() ?? 0,
       ownedHats: set('ownedHats'),
       equippedHat: json['equippedHat'] as String?,
+      replayDay: json['replayDay'] as String?,
+      replayEarned: (json['replayEarned'] as num?)?.toInt() ?? 0,
     );
   }
 }
@@ -179,13 +193,13 @@ class LevelInfo {
 
 const levels = <LevelInfo>[
   LevelInfo(1, 'Gotita Curiosa', 0),
-  LevelInfo(2, 'Explorador', 80),
-  LevelInfo(3, 'Aprendiz del Agua', 200),
-  LevelInfo(4, 'Guardián del Río', 350),
-  LevelInfo(5, 'Protector Fluvial', 550),
-  LevelInfo(6, 'Héroe de Loja', 800),
-  LevelInfo(7, 'Leyenda del Agua', 1100),
-  LevelInfo(8, 'Gran Guardián', 1500),
+  LevelInfo(2, 'Explorador', 100),
+  LevelInfo(3, 'Aprendiz del Agua', 260),
+  LevelInfo(4, 'Guardián del Río', 480),
+  LevelInfo(5, 'Protector Fluvial', 760),
+  LevelInfo(6, 'Héroe de Loja', 1100),
+  LevelInfo(7, 'Leyenda del Agua', 1550),
+  LevelInfo(8, 'Gran Guardián', 2200),
 ];
 
 @immutable
