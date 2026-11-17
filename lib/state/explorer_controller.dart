@@ -52,6 +52,7 @@ class RewardOutcome {
     this.levelUp,
     this.newMedals = const [],
     this.newGames = const [],
+    this.newHats = const [],
     this.missionBonus = 0,
   });
 
@@ -61,6 +62,9 @@ class RewardOutcome {
 
   /// Minijuegos extra que se desbloquearon con esta recompensa.
   final List<GameInfo> newGames;
+
+  /// Sombreros que se pueden comprar desde este nuevo nivel.
+  final List<HatInfo> newHats;
   final int missionBonus;
 
   int get total => gotitas + missionBonus;
@@ -68,7 +72,7 @@ class RewardOutcome {
       total == 0 && levelUp == null && newMedals.isEmpty && newGames.isEmpty;
 }
 
-enum HatPurchase { bought, notEnough, alreadyOwned }
+enum HatPurchase { bought, notEnough, alreadyOwned, levelLocked }
 
 class ExplorerController extends Notifier<ExplorerState> {
   ProgressRepository get _repo => ref.read(progressRepositoryProvider);
@@ -157,6 +161,11 @@ class ExplorerController extends Notifier<ExplorerState> {
     final newGames = games
         .where((g) => !g.unlockedFor(before) && g.unlockedFor(next))
         .toList(growable: false);
+    final newHats = hats
+        .where(
+          (h) => !h.availableAt(beforeLevel) && h.availableAt(afterLevel.level),
+        )
+        .toList(growable: false);
     _commit(next);
     return RewardOutcome(
       gotitas: earned,
@@ -164,6 +173,7 @@ class ExplorerController extends Notifier<ExplorerState> {
       levelUp: afterLevel.level > beforeLevel ? afterLevel.current : null,
       newMedals: newMedals,
       newGames: newGames,
+      newHats: newHats,
     );
   }
 
@@ -239,6 +249,9 @@ class ExplorerController extends Notifier<ExplorerState> {
   HatPurchase buyHat(HatInfo hat) {
     final p = state.progress;
     if (p.ownedHats.contains(hat.id)) return HatPurchase.alreadyOwned;
+    if (!hat.availableAt(LevelProgress.of(p.gotitas).level)) {
+      return HatPurchase.levelLocked;
+    }
     if (p.wallet < hat.price) return HatPurchase.notEnough;
     _commit(
       p.copyWith(

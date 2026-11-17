@@ -181,6 +181,15 @@ class _RewardDialogState extends State<_RewardDialog>
                           text: '¡Nuevo minijuego: ${g.title}!',
                         ),
                       ],
+                      for (final h in o.newHats) ...[
+                        const SizedBox(height: 10),
+                        _Banner(
+                          icon: Icons.checkroom_rounded,
+                          color: AppColors.blueSoft,
+                          foreground: AppColors.blue,
+                          text: '¡Nuevo sombrero en la tienda: ${h.name}!',
+                        ),
+                      ],
                       const SizedBox(height: 20),
                       ChunkyButton(
                         label: widget.action,

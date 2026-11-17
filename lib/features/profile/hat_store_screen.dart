@@ -92,6 +92,8 @@ class _HatStoreScreenState extends ConsumerState<HatStoreScreen>
     final owned = p.ownedHats.contains(hat.id);
     final wearing = p.equippedHat == hat.id;
     final missing = hat.price - p.wallet;
+    final level = s.level.level;
+    final levelLocked = !owned && !hat.availableAt(level);
 
     final ChunkyButton action;
     if (wearing) {
@@ -110,6 +112,13 @@ class _HatStoreScreenState extends ConsumerState<HatStoreScreen>
           HapticFeedback.selectionClick();
           ref.read(explorerProvider.notifier).equipHat(hat.id);
         },
+      );
+    } else if (levelLocked) {
+      action = ChunkyButton(
+        label: 'Se desbloquea en el Nivel ${hat.minLevel}',
+        leading: Icons.lock_outline_rounded,
+        singleLine: true,
+        onPressed: null,
       );
     } else if (missing > 0) {
       action = ChunkyButton(
@@ -282,6 +291,7 @@ class _HatStoreScreenState extends ConsumerState<HatStoreScreen>
                     owned: p.ownedHats.contains(h.id),
                     wearing: p.equippedHat == h.id,
                     affordable: p.wallet >= h.price,
+                    levelLocked: !h.availableAt(s.level.level),
                     onTap: () {
                       HapticFeedback.selectionClick();
                       setState(() => _selected = h.id);
@@ -320,6 +330,7 @@ class _HatTile extends StatelessWidget {
     required this.wearing,
     required this.affordable,
     required this.onTap,
+    this.levelLocked = false,
   });
 
   final HatInfo hat;
@@ -328,6 +339,9 @@ class _HatTile extends StatelessWidget {
   final bool wearing;
   final bool affordable;
   final VoidCallback onTap;
+
+  /// Aún no se alcanza el nivel mínimo del sombrero.
+  final bool levelLocked;
 
   @override
   Widget build(BuildContext context) {
@@ -342,6 +356,14 @@ class _HatTile extends StatelessWidget {
           )
         : owned
         ? const Pill(label: 'Tuyo', dense: true, color: AppColors.cyanSoft)
+        : levelLocked
+        ? Pill(
+            label: 'Nivel ${hat.minLevel}',
+            icon: Icons.lock_outline_rounded,
+            dense: true,
+            color: AppColors.surfaceBlue,
+            foreground: AppColors.inkSoft,
+          )
         : Pill(
             label: '${hat.price}',
             icon: Icons.water_drop_rounded,
@@ -352,7 +374,11 @@ class _HatTile extends StatelessWidget {
     return Pressable(
       onTap: onTap,
       semanticLabel:
-          '${hat.name}, ${owned ? 'comprado' : '${hat.price} gotitas'}',
+          '${hat.name}, ${owned
+              ? 'comprado'
+              : levelLocked
+              ? 'se desbloquea en el nivel ${hat.minLevel}'
+              : '${hat.price} gotitas'}',
       child: AnimatedContainer(
         duration: AppMotion.of(context, AppMotion.fast),
         curve: AppMotion.easeOut,
@@ -375,7 +401,7 @@ class _HatTile extends StatelessWidget {
         child: Column(
           children: [
             Opacity(
-              opacity: owned || affordable ? 1 : 0.55,
+              opacity: owned || (affordable && !levelLocked) ? 1 : 0.55,
               child: HatIcon(hatId: hat.id, width: 84),
             ),
             const SizedBox(height: 8),

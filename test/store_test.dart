@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:riova/core/theme/app_theme.dart';
 import 'package:riova/core/widgets/hat.dart';
+import 'package:riova/data/content/game_content.dart';
 import 'package:riova/data/content/hat_content.dart';
 import 'package:riova/data/models/explorer.dart';
 import 'package:riova/data/repositories/progress_repository.dart';
@@ -62,6 +63,32 @@ void main() {
     expect(c.read(explorerProvider).progress.equippedHat, isNull);
   });
 
+  test('los sombreros de nivel alto no se compran antes de tiempo', () {
+    // 450 gotitas = Nivel 4: alcanza para la Corona (400) pero pide Nivel 6.
+    final c = _container(
+      InMemoryProgressRepository(
+        progress: const ExplorerProgress(gotitas: 450),
+      ),
+    );
+    final ctrl = c.read(explorerProvider.notifier);
+    expect(c.read(explorerProvider).level.level, 4);
+    expect(ctrl.buyHat(hatById('corona_gotitas')!), HatPurchase.levelLocked);
+    expect(ctrl.buyHat(hatById('colibri')!), HatPurchase.levelLocked);
+    expect(ctrl.buyHat(hatById('boina_musical')!), HatPurchase.bought);
+    expect(c.read(explorerProvider).progress.wallet, 200);
+  });
+
+  test('subir de nivel avisa los sombreros nuevos de la tienda', () {
+    final c = _container(
+      InMemoryProgressRepository(progress: const ExplorerProgress(gotitas: 60)),
+    );
+    final out = c
+        .read(explorerProvider.notifier)
+        .completeGame(GameId.quiz, won: true); // +30 → 90 = Nivel 2
+    expect(out.levelUp?.level, 2);
+    expect(out.newHats.map((h) => h.id), ['guardaparques', 'detective']);
+  });
+
   test('10 sombreros con id único y precios crecientes', () {
     expect(hats, hasLength(10));
     expect(hats.map((h) => h.id).toSet(), hasLength(10));
@@ -99,7 +126,10 @@ void main() {
       ),
     );
     await tester.pump(const Duration(milliseconds: 800));
-    expect(find.byType(WithHat), findsWidgets); // vista previa y botón de perfil
+    expect(
+      find.byType(WithHat),
+      findsWidgets,
+    ); // vista previa y botón de perfil
     // Recorre la lista y prueba cada sombrero en la vista previa.
     for (final h in hats) {
       await tester.scrollUntilVisible(find.text(h.name).last, 200);

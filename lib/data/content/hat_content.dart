@@ -9,12 +9,18 @@ class HatInfo {
     required this.name,
     required this.price,
     required this.description,
+    this.minLevel = 1,
   });
 
   final String id;
   final String name;
   final int price;
   final String description;
+
+  /// Nivel mínimo para poder comprarlo (además de tener las gotitas).
+  final int minLevel;
+
+  bool availableAt(int level) => level >= minLevel;
 }
 
 const hats = <HatInfo>[
@@ -43,30 +49,35 @@ const hats = <HatInfo>[
     price: 100,
     description:
         'El sombrero de quienes cuidan los bosques que guardan el agua.',
+    minLevel: 2,
   ),
   HatInfo(
     id: 'detective',
     name: 'Gorro de Detective',
     price: 120,
     description: 'Ideal para investigar por qué se inunda el río.',
+    minLevel: 2,
   ),
   HatInfo(
     id: 'corona_sauce',
     name: 'Corona de Sauce',
     price: 150,
     description: 'Hecha con hojas de sauce, el árbol que protege las orillas.',
+    minLevel: 3,
   ),
   HatInfo(
     id: 'paja_toquilla',
     name: 'Sombrero de Paja Toquilla',
     price: 200,
     description: 'El clásico sombrero ecuatoriano, tejido a mano.',
+    minLevel: 3,
   ),
   HatInfo(
     id: 'boina_musical',
     name: 'Boina Musical',
     price: 250,
     description: 'Loja es la capital musical del Ecuador. ¡Que suene el río!',
+    minLevel: 4,
   ),
   HatInfo(
     id: 'colibri',
@@ -74,12 +85,14 @@ const hats = <HatInfo>[
     price: 300,
     description:
         'Inspirado en los colibríes que visitan las flores de la ribera.',
+    minLevel: 5,
   ),
   HatInfo(
     id: 'corona_gotitas',
     name: 'Corona de Gotitas',
     price: 400,
     description: 'Legendaria: solo para los grandes guardianes del agua.',
+    minLevel: 6,
   ),
 ];
 
