@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/mascot/rio_mascot.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/app_motion.dart';
+import '../../../core/widgets/motion_widgets.dart';
 import '../../../data/content/game_content.dart';
 import '../common/game_scaffold.dart';
 
@@ -251,19 +252,7 @@ class _NatureMemoryGameState extends ConsumerState<NatureMemoryGame> {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-            child: AnimatedSwitcher(
-              duration: AppMotion.of(context, AppMotion.medium),
-              switchInCurve: AppMotion.easeOut,
-              transitionBuilder: (child, anim) => FadeTransition(
-                opacity: anim,
-                child: SlideTransition(
-                  position: Tween(
-                    begin: const Offset(0, 0.3),
-                    end: Offset.zero,
-                  ).animate(anim),
-                  child: child,
-                ),
-              ),
+            child: SequentialSwap(
               child: RioSays(
                 key: ValueKey(_lastFound?.name),
                 label: _lastFound == null

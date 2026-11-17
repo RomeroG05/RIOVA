@@ -515,8 +515,9 @@ class _PhotoViewerState extends State<_PhotoViewer> {
                       style: t.labelMedium?.copyWith(color: Colors.white70),
                     ),
                     const SizedBox(height: 4),
-                    AnimatedSwitcher(
-                      duration: AppMotion.of(context, AppMotion.fast),
+                    SequentialSwap(
+                      duration: AppMotion.medium,
+                      alignment: Alignment.bottomLeft,
                       child: Text(
                         photo.caption,
                         key: ValueKey(_index),

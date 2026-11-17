@@ -301,3 +301,55 @@ class _PulseRingState extends State<PulseRing>
     );
   }
 }
+
+/// Cambia un contenido (normalmente texto) por otro SIN superponerlos: el
+/// anterior se desvanece en la primera mitad y el nuevo aparece en la
+/// segunda, con un leve desplazamiento hacia arriba. La altura se ajusta
+/// suavemente si el nuevo texto ocupa más o menos líneas.
+///
+/// El [child] debe tener una `key` distinta para cada contenido.
+class SequentialSwap extends StatelessWidget {
+  const SequentialSwap({
+    super.key,
+    required this.child,
+    this.duration = const Duration(milliseconds: 360),
+    this.alignment = Alignment.topCenter,
+  });
+
+  final Widget child;
+  final Duration duration;
+  final AlignmentGeometry alignment;
+
+  static const _out = Interval(0.5, 1, curve: Curves.easeIn);
+  static const _in = Interval(0.5, 1, curve: AppMotion.easeOut);
+
+  @override
+  Widget build(BuildContext context) {
+    final d = AppMotion.of(context, duration);
+    return AnimatedSize(
+      duration: d,
+      curve: AppMotion.easeInOut,
+      alignment: alignment,
+      child: AnimatedSwitcher(
+        duration: d,
+        // Entrante: espera la primera mitad y luego aparece.
+        // Saliente (animación en reversa): se va durante la primera mitad.
+        switchInCurve: _in,
+        switchOutCurve: _out,
+        layoutBuilder: (current, previous) =>
+            Stack(alignment: alignment, children: [...previous, ?current]),
+        transitionBuilder: (child, anim) => FadeTransition(
+          opacity: anim,
+          child: SlideTransition(
+            position: Tween(
+              begin: const Offset(0, 0.12),
+              end: Offset.zero,
+            ).animate(anim),
+            child: child,
+          ),
+        ),
+        child: child,
+      ),
+    );
+  }
+}

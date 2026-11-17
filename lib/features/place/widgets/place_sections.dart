@@ -10,6 +10,7 @@ import '../../../data/models/place.dart';
 import '../../../state/sensor_network.dart';
 import '../../../state/tts_service.dart';
 import '../../../core/widgets/two_column_grid.dart';
+import '../../../core/widgets/motion_widgets.dart';
 
 /// Botón "Escuchar" que lee un texto con la voz del sistema.
 class ListenButton extends ConsumerWidget {
@@ -187,8 +188,8 @@ class LiveConditions extends ConsumerWidget {
                 ),
                 const SizedBox(width: 10),
                 Expanded(
-                  child: AnimatedSwitcher(
-                    duration: AppMotion.of(context, AppMotion.medium),
+                  child: SequentialSwap(
+                    alignment: Alignment.centerLeft,
                     child: Text(
                       'RÍO: $message',
                       key: ValueKey(clean),
@@ -252,8 +253,9 @@ class _Metric extends StatelessWidget {
                 ),
                 // Los valores cambian cada pocos segundos: un fundido corto
                 // indica "dato nuevo" sin distraer.
-                AnimatedSwitcher(
-                  duration: AppMotion.of(context, AppMotion.fast),
+                SequentialSwap(
+                  duration: AppMotion.medium,
+                  alignment: Alignment.centerLeft,
                   child: Text(
                     value,
                     key: ValueKey(value),

@@ -226,8 +226,8 @@ class _RecycleGameState extends ConsumerState<RecycleGame> {
                   left: 16,
                   right: 16,
                   top: 12,
-                  child: AnimatedSwitcher(
-                    duration: AppMotion.of(context, AppMotion.fast),
+                  child: SequentialSwap(
+                    duration: AppMotion.medium,
                     child: _hint == null
                         ? const RioSays(
                             message: '¡Arrastra cada residuo a su tacho!',

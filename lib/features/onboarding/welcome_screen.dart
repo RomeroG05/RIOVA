@@ -302,20 +302,9 @@ class _FactBubble extends StatelessWidget {
               ),
             ],
           ),
-          child: AnimatedSwitcher(
-            duration: AppMotion.of(context, AppMotion.medium),
-            switchInCurve: AppMotion.easeOut,
-            switchOutCurve: AppMotion.easeOut,
-            transitionBuilder: (child, anim) => FadeTransition(
-              opacity: anim,
-              child: SlideTransition(
-                position: Tween(
-                  begin: const Offset(0, 0.15),
-                  end: Offset.zero,
-                ).animate(anim),
-                child: child,
-              ),
-            ),
+          // Primero se va la frase anterior y luego entra la nueva: antes se
+          // superponían durante el cambio.
+          child: SequentialSwap(
             child: Text(
               text,
               key: ValueKey(text),
