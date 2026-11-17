@@ -289,10 +289,12 @@ class _RiversPainter extends CustomPainter {
   void _river(Canvas canvas, List<Offset> pts, Color color, bool dim) {
     final path = _smooth(pts);
     final alpha = dim ? 0.25 : 1.0;
+    // Borde del río: blanco de día, azul profundo de noche.
+    final edge = AppColors.dark ? const Color(0xFF1D3A55) : Colors.white;
     canvas.drawPath(
       path,
       Paint()
-        ..color = Colors.white.withValues(alpha: alpha)
+        ..color = edge.withValues(alpha: alpha)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 40
         ..strokeCap = StrokeCap.round,
@@ -324,10 +326,13 @@ class _RiversPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // Fondo con suaves "islas" de vegetación.
-    final bg = Paint()..color = const Color(0xFFE6F4EA);
+    final night = AppColors.dark;
+    final bg = Paint()
+      ..color = night ? const Color(0xFF143224) : const Color(0xFFE6F4EA);
     canvas.drawRect(
       Offset.zero & size,
-      Paint()..color = const Color(0xFFEFF6FE),
+      Paint()
+        ..color = night ? const Color(0xFF0F1E2E) : const Color(0xFFEFF6FE),
     );
     final rnd = math.Random(3);
     for (var i = 0; i < 18; i++) {
