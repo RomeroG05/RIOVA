@@ -1,0 +1,2416 @@
+{
+  "sectors": {
+    "capuli2": {
+      "id": "capuli2",
+      "code": "A1",
+      "order": 1,
+      "name": "Sector Capulí II",
+      "shortName": "Capulí II",
+      "zone": "sur",
+      "river": "malacatos",
+      "lat": -4.04895,
+      "lng": -79.19751,
+      "totem": 1,
+      "qr": "riova://totem/01",
+      "landmark": false,
+      "headline": "El Capulí: de zona rural olvidada a barrio en crecimiento",
+      "tagline": "“Río Malacatos, nuestra fuente de vida”.",
+      "description": "Barrio entre la ciudad y el campo, junto al río Malacatos y la quebrada Namanda, en la vía a Vilcabamba.",
+      "story": [
+        "Hasta los años 90, El Capulí era una zona verde de huertos y campo. Hoy es un barrio que crece a lo largo de la vía a Vilcabamba, junto al río Malacatos.",
+        "Antes, el río regaba los huertos y las familias lo usaban para bañarse y lavar. Sus vecinos todavía cuidan huertos, corrales y áreas verdes.",
+        "Las montañas que lo rodean tienen pendientes muy fuertes, así que algunas casas están en zonas con riesgo de deslizamientos."
+      ],
+      "fact": "En 2008, El Capulí fue declarado área de reserva urbana para conservar los espacios naturales cercanos a la ciudad.",
+      "factTags": [
+        "Vida de campo",
+        "Huertos",
+        "Quebrada Namanda"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/capuli2/1.webp",
+          "caption": "Vista aérea: el Malacatos (en azul) entra al sur de Loja entre huertos y casas",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/capuli2/2.webp",
+          "caption": "Antes, las familias lavaban la ropa en el río",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/capuli2/3.webp",
+          "caption": "El cauce del Malacatos en El Capulí",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/capuli2/4.webp",
+          "caption": "Sendero y árboles junto a la orilla",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/capuli2/5.webp",
+          "caption": "Ilustración: agricultura y ganadería junto al río",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Sra. María",
+          "quote": "La basura y desechos siempre llegan a donde tengo mis cultivos y se llena de mal olor."
+        },
+        {
+          "who": "Sr. Joaquín",
+          "quote": "Antes mi mujer bañaba a mis hijos en el río, ahora ya no se puede por la suciedad."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "contaminacion",
+          "summary": "Desagües y basura llegan al río.",
+          "detail": "Algunos desagües vierten agua sucia directamente al río y se forman islas de sedimentos. La basura llega hasta los cultivos de la orilla."
+        },
+        {
+          "kind": "erosion",
+          "summary": "Laderas muy empinadas que se deslizan.",
+          "detail": "El terreno tiene pendientes de hasta 81 %. En época de lluvias hay deslaves cerca de las casas más bajas."
+        },
+        {
+          "kind": "olores",
+          "summary": "Agua contaminada y mal olor.",
+          "detail": "En algunos tramos el agua huele mal y ya no se puede usar para bañarse, como se hacía antes."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes de 1990",
+          "text": "El Capulí era una zona verde de campo, sin casas planificadas. El río regaba los huertos."
+        },
+        {
+          "title": "1997 – 2009",
+          "text": "La ciudad amplió su límite urbano e incluyó al barrio. En 2008 fue declarado reserva urbana."
+        },
+        {
+          "title": "Hoy",
+          "text": "Un barrio que mezcla ciudad y campo, con servicios básicos pero un río que necesita cuidado."
+        }
+      ],
+      "species": [
+        {
+          "name": "Capulí",
+          "emoji": "🍒",
+          "tag": "Árbol frutal",
+          "text": "Da frutitos dulces y le da nombre al barrio.",
+          "fauna": false
+        },
+        {
+          "name": "Faique",
+          "emoji": "🌵",
+          "tag": "Nativo",
+          "text": "Árbol espinoso del bosque seco.",
+          "fauna": false
+        },
+        {
+          "name": "Tórtola orejuda",
+          "emoji": "🕊️",
+          "tag": "Ave",
+          "text": "Camina buscando semillas en el suelo.",
+          "fauna": true
+        },
+        {
+          "name": "Colibrí",
+          "emoji": "🐦",
+          "tag": "Ave",
+          "text": "Visita las flores de la ribera.",
+          "fauna": true
+        }
+      ],
+      "quiz": {
+        "question": "¿Para qué usaban el río Malacatos las familias de El Capulí antes?",
+        "options": [
+          "Para regar sus huertos y para bañarse y lavar.",
+          "Para pasear en barcos grandes.",
+          "Para nada, nadie se acercaba al río."
+        ],
+        "answer": 0,
+        "explanation": "El río era una fuente de vida: regaba los cultivos y servía para las tareas de la casa."
+      }
+    },
+    "capuli1": {
+      "id": "capuli1",
+      "code": "A2",
+      "order": 2,
+      "name": "Sector Capulí I",
+      "shortName": "Capulí I",
+      "zone": "sur",
+      "river": "malacatos",
+      "lat": -4.03827,
+      "lng": -79.20063,
+      "totem": 2,
+      "qr": "riova://totem/02",
+      "landmark": false,
+      "headline": "La indiferencia: recuperar el vínculo con el río Malacatos",
+      "tagline": "Un sendero junto al río que espera volver a la vida.",
+      "description": "Tramo del Malacatos junto a la Universidad Nacional de Loja y su Jardín Botánico, con un sendero dañado por las crecidas.",
+      "story": [
+        "Junto a la Universidad Nacional de Loja, el río Malacatos tiene un sendero y zonas para descansar que hoy casi nadie usa.",
+        "Tras un desborde, parte de la orilla quedó convertida en escombrera, y el sendero perdió tramos por la fuerza del agua.",
+        "Aun así, los vecinos dicen que es un barrio seguro y unido, y sueñan con recuperar sus espacios junto al río."
+      ],
+      "fact": "El Capulí está en una zona de gran biodiversidad: aquí se mezclan los bosques andinos y el bosque seco del sur del Ecuador.",
+      "factTags": [
+        "Universidad Nacional",
+        "Jardín Botánico",
+        "Sendero"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/capuli1/1.webp",
+          "caption": "Poza estancada junto al cauce, con agua anaranjada por vertidos de una construcción",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/capuli1/2.webp",
+          "caption": "Bancas y espacios de descanso sin uso",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/capuli1/3.webp",
+          "caption": "El sendero junto al río, dañado por la corriente",
+          "drawing": false
+        }
+      ],
+      "voices": [
+        {
+          "who": "Vecino del sector",
+          "quote": "Es un barrio seguro, no hay robos y hay cohesión entre la comunidad."
+        },
+        {
+          "who": "Vecina del sector",
+          "quote": "Cuando llueve demasiado, las quebradas suelen causar daños a las casas de al lado."
+        },
+        {
+          "who": "Vecino del sector",
+          "quote": "En ciertas épocas del año el río es un peligro si uno quiere pasear cerca."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "contaminacion",
+          "summary": "Aguas servidas, escombros y bacterias.",
+          "detail": "El río recibe desechos orgánicos, basura, restos de construcción y aguas servidas. Se ha detectado la bacteria E. coli, peligrosa para la salud."
+        },
+        {
+          "kind": "abandono",
+          "summary": "Áreas de descanso sin mantenimiento.",
+          "detail": "Las bancas y zonas de encuentro están abandonadas, por eso las familias buscan otros barrios para jugar y pasear."
+        },
+        {
+          "kind": "erosion",
+          "summary": "La orilla se desgasta.",
+          "detail": "La extracción de piedras del río y la tala de árboles hacen que el agua se lleve la orilla y destruya el sendero."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "1974",
+          "text": "La mayor parte del sector era campo y vegetación."
+        },
+        {
+          "title": "2017",
+          "text": "El Municipio detectó casas que vertían aguas servidas al río y planificó una planta de tratamiento."
+        },
+        {
+          "title": "2025",
+          "text": "Las crecidas dañaron el sendero. Los vecinos esperan recuperar el río y sus parques."
+        }
+      ],
+      "species": [
+        {
+          "name": "Ojo de poeta",
+          "emoji": "🌼",
+          "tag": "Enredadera",
+          "text": "Flor naranja con centro oscuro.",
+          "fauna": false
+        },
+        {
+          "name": "Cedro",
+          "emoji": "🌳",
+          "tag": "Árbol nativo",
+          "text": "Madera valiosa y sombra fresca.",
+          "fauna": false
+        },
+        {
+          "name": "Sauce",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Sus raíces sujetan la orilla.",
+          "fauna": false
+        },
+        {
+          "name": "Campanilla",
+          "emoji": "🌻",
+          "tag": "Arbusto",
+          "text": "Flores amarillas para los colibríes.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué pasa con el sendero cuando el río crece por las lluvias?",
+        "options": [
+          "La corriente destruye partes del sendero y deja escombros.",
+          "El sendero se hace más largo.",
+          "Nada, el sendero es de metal."
+        ],
+        "answer": 0,
+        "explanation": "Sin árboles que protejan la orilla, la fuerza del agua se lleva el camino."
+      }
+    },
+    "tebaida": {
+      "id": "tebaida",
+      "code": "A3",
+      "order": 3,
+      "name": "Parque Lineal La Tebaida",
+      "shortName": "La Tebaida",
+      "zone": "sur",
+      "river": "malacatos",
+      "lat": -4.01818,
+      "lng": -79.20266,
+      "totem": 3,
+      "qr": "riova://totem/03",
+      "landmark": true,
+      "headline": "Inundaciones, erosión y contaminación generan alarma",
+      "tagline": "El gran parque junto al río Malacatos que une a tres barrios.",
+      "description": "Parque lineal con senderos, canchas y sauces junto al Malacatos; une los barrios La Tebaida, La Argelia y Los Geranios.",
+      "story": [
+        "El Parque Lineal La Tebaida es el gran espacio verde del sur de Loja. Las familias vienen a pasear, correr, jugar y montar en bici junto al río.",
+        "Pero cuando llueve fuerte, el río se desborda y cubre los senderos de lodo, ramas y basura.",
+        "Para controlar el caudal se construyó un “desarenador”, una pequeña represa; aun así, no logra frenar las crecidas más fuertes."
+      ],
+      "fact": "El parque tiene un “desarenador”: una pequeña represa que ayuda a regular el caudal del río Malacatos.",
+      "factTags": [
+        "Familias",
+        "Ciclistas",
+        "Sauces"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/tebaida/1.webp",
+          "caption": "El parque lineal cubierto de lodo tras una crecida",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/tebaida/2.webp",
+          "caption": "Recorrido por los senderos del parque",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/tebaida/3.webp",
+          "caption": "Collage: la vida y los problemas del parque",
+          "drawing": true
+        },
+        {
+          "asset": "assets/places/tebaida/4.webp",
+          "caption": "Sauces, eucaliptos y palmas: los árboles del parque",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Visitante",
+          "quote": "Siempre venimos al parque a dar un paseo con nuestro pequeño."
+        },
+        {
+          "who": "Visitante",
+          "quote": "El río me da mucha tranquilidad, menos cuando llueve."
+        },
+        {
+          "who": "Joven del barrio",
+          "quote": "Nos gusta planificar un partidito, lo malo es el lodo y la basura que no nos deja jugar tranquilos."
+        },
+        {
+          "who": "Vecina",
+          "quote": "El aspecto del río ha cambiado para mal, se llena de basura y ramas."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "inundacion",
+          "summary": "El parque se inunda con cada lluvia intensa.",
+          "detail": "Cada desborde cubre el parque de lodo y basura, daña los senderos y obliga a hacer costosas limpiezas."
+        },
+        {
+          "kind": "basura",
+          "summary": "Plásticos, fundas y escombros en el cauce.",
+          "detail": "Algunas personas arrojan basura al río y, como casi no se limpia, se queda estancada."
+        },
+        {
+          "kind": "olores",
+          "summary": "El mal olor aleja a las visitas.",
+          "detail": "Los vertidos sin tratar hacen que algunos días el río huela mal."
+        },
+        {
+          "kind": "erosion",
+          "summary": "Orillas sin árboles.",
+          "detail": "La tala en las riberas debilita la tierra y las crecidas socavan los senderos."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes",
+          "text": "El río corría entre campos y potreros del sur de la ciudad."
+        },
+        {
+          "title": "Parque lineal",
+          "text": "Se construyó el parque para acercar a las personas al río, con senderos, juegos y canchas."
+        },
+        {
+          "title": "Hoy",
+          "text": "Es el área verde más usada del sector, pero necesita limpieza y cuidado para no inundarse."
+        }
+      ],
+      "species": [
+        {
+          "name": "Sauce",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Sus raíces sujetan la orilla.",
+          "fauna": false
+        },
+        {
+          "name": "Eucalipto",
+          "emoji": "🌿",
+          "tag": "Introducido",
+          "text": "Crece rápido, pero bebe mucha agua.",
+          "fauna": false
+        },
+        {
+          "name": "Palma de abanico",
+          "emoji": "🌴",
+          "tag": "Introducida",
+          "text": "Sus hojas parecen abanicos.",
+          "fauna": false
+        },
+        {
+          "name": "Aves del parque",
+          "emoji": "🐦",
+          "tag": "Fauna",
+          "text": "Los árboles atraen muchas aves.",
+          "fauna": true
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué ocurre en el parque cuando llueve muy fuerte en los Andes?",
+        "options": [
+          "El río puede desbordarse y cubrir los senderos de lodo y basura.",
+          "El río desaparece.",
+          "El agua se queda quieta y limpia."
+        ],
+        "answer": 0,
+        "explanation": "Con lluvias intensas el río recibe mucha agua de golpe; si está lleno de basura, se desborda."
+      }
+    },
+    "supermaxi": {
+      "id": "supermaxi",
+      "code": "A4",
+      "order": 4,
+      "name": "Sector Supermaxi",
+      "shortName": "Supermaxi",
+      "zone": "sur",
+      "river": "malacatos",
+      "lat": -4.01268,
+      "lng": -79.20308,
+      "totem": 4,
+      "qr": "riova://totem/04",
+      "landmark": false,
+      "headline": "Lluvias en Loja: el río Malacatos se desborda y causa estragos",
+      "tagline": "“El río tiene memoria”.",
+      "description": "Zona de comercio junto al Malacatos: Supermaxi, Mall Don Daniel, el Mercado La Tebaida y el hospital municipal.",
+      "story": [
+        "Aquí la ciudad se llena de tiendas, el mercado, un centro comercial y un hospital. Mucha gente pasa cada día junto al río.",
+        "Río arriba, el Malacatos corre libre; después aparece un talud a un lado y, al final, el río queda encerrado entre muros.",
+        "Entre marzo y mayo llueve mucho y el río puede rebasar su cauce, como pasó en marzo de 2025."
+      ],
+      "fact": "Entre marzo y mayo llueve más en Loja; por eso en esos meses el Malacatos crece y puede desbordarse.",
+      "factTags": [
+        "Comercio",
+        "Mercado",
+        "Ciclovía"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/supermaxi/1.webp",
+          "caption": "Puente peatonal sobre el Malacatos (el río va en azul)",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/supermaxi/2.webp",
+          "caption": "Sendero junto al río",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/supermaxi/3.webp",
+          "caption": "El río entre comercios y edificios",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/supermaxi/4.webp",
+          "caption": "La calle frente al Supermaxi",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/supermaxi/5.webp",
+          "caption": "Collage: juegos, deporte y comercio a orillas del río",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Vecino",
+          "quote": "Antes la gente venía al río a descansar, ahora viene al mall… el ruido cambió."
+        },
+        {
+          "who": "Peatón",
+          "quote": "¡Qué horrible olor! Caminaré más rápido."
+        },
+        {
+          "who": "Niña",
+          "quote": "¡Mira! Aquí el río corre libre, sin muros… parece un lugar feliz. ¿Y por qué más adelante está tan encerrado?"
+        }
+      ],
+      "problems": [
+        {
+          "kind": "inundacion",
+          "summary": "El río rebasa su capacidad en invierno.",
+          "detail": "Las lluvias de marzo a mayo hacen crecer el río; se dañan calles, áreas verdes y casas cercanas."
+        },
+        {
+          "kind": "muros",
+          "summary": "Un río encerrado entre taludes.",
+          "detail": "Para proteger las casas se construyeron taludes y muros; el río perdió su espacio y sus orillas naturales."
+        },
+        {
+          "kind": "inseguridad",
+          "summary": "Esquinas solitarias y con malos olores.",
+          "detail": "En ciertas horas, algunas esquinas junto al río se sienten inseguras y la gente prefiere otra ruta."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "1990",
+          "text": "El Malacatos era natural y abierto, con casas alineadas a lo largo del río."
+        },
+        {
+          "title": "2010",
+          "text": "La ciudad se hizo más densa y se construyeron taludes para proteger las casas."
+        },
+        {
+          "title": "2024",
+          "text": "Zona de comercio y servicios; el río quedó oculto detrás de muros en algunos tramos."
+        }
+      ],
+      "species": [
+        {
+          "name": "Sauce llorón",
+          "emoji": "🌳",
+          "tag": "Ribereño",
+          "text": "Sus ramas cuelgan hacia el agua.",
+          "fauna": false
+        },
+        {
+          "name": "Aliso",
+          "emoji": "🌲",
+          "tag": "Nativo",
+          "text": "Da frescura y protege los taludes.",
+          "fauna": false
+        },
+        {
+          "name": "Chilca",
+          "emoji": "🌿",
+          "tag": "Arbusto nativo",
+          "text": "Crece sola en las orillas.",
+          "fauna": false
+        },
+        {
+          "name": "Acacia",
+          "emoji": "🌼",
+          "tag": "Árbol",
+          "text": "Flores amarillas en racimos.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Por qué mucha gente visita el tramo del río cerca del Mercado La Tebaida?",
+        "options": [
+          "Porque hay comercio y espacios para jugar y pasear.",
+          "Porque hay cascadas gigantes.",
+          "Porque es un lugar para pescar ballenas."
+        ],
+        "answer": 0,
+        "explanation": "El mercado, las tiendas, los senderos y los juegos atraen a muchas personas."
+      }
+    },
+    "el_leon": {
+      "id": "el_leon",
+      "code": "B1",
+      "order": 5,
+      "name": "Sector El León",
+      "shortName": "El León",
+      "zone": "centro",
+      "river": "malacatos",
+      "lat": -4.00146,
+      "lng": -79.20455,
+      "totem": 5,
+      "qr": "riova://totem/05",
+      "landmark": false,
+      "headline": "El León bajo el agua: el costo ambiental del progreso",
+      "tagline": "Un barrio muy activo que convive con el río cada invierno.",
+      "description": "Sector del centro junto al Monumento El León, con muchas casas, comercios y tráfico a orillas del Malacatos.",
+      "story": [
+        "El León pasó de ser un lugar tranquilo con campos y huertos a un barrio lleno de comercio y tránsito.",
+        "Desde hace más de veinte años, cuando llueve fuerte, el río arrastra palos, troncos y arena que se atascan en los puentes y lo hacen desbordarse.",
+        "Casi no quedan espacios libres: solo el 7 % del sector son áreas para recrearse."
+      ],
+      "fact": "Cuando llueve fuerte, el río arrastra palos, troncos y arena que se atascan bajo los puentes y provocan desbordes.",
+      "factTags": [
+        "Centro",
+        "Comercio",
+        "Puentes"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/el_leon/1.webp",
+          "caption": "Cuatro miradas al Malacatos en El León",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/el_leon/2.webp",
+          "caption": "Ilustración: un río para jugar y pasear",
+          "drawing": true
+        },
+        {
+          "asset": "assets/places/el_leon/3.webp",
+          "caption": "Ilustración: un desagüe que vierte agua al río",
+          "drawing": true
+        },
+        {
+          "asset": "assets/places/el_leon/4.webp",
+          "caption": "Cómic: lo que perciben los vecinos",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Moradora",
+          "quote": "Antes el sector era más tranquilo; hoy es un punto activo de la ciudad, con menos espacios para detenerse y estar."
+        },
+        {
+          "who": "Comerciante",
+          "quote": "Cada temporada de lluvias el río se desborda y afecta a nuestros negocios."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "inundacion",
+          "summary": "Desbordes cada invierno desde hace 20 años.",
+          "detail": "Las lluvias intensas hacen crecer el río; el agua y el lodo llegan a casas, comercios y calles."
+        },
+        {
+          "kind": "basura",
+          "summary": "Troncos y basura atascados en los puentes.",
+          "detail": "Lo que arrastra el río se acumula bajo los puentes y frena el paso del agua."
+        },
+        {
+          "kind": "contaminacion",
+          "summary": "Descargas residuales en el río.",
+          "detail": "Aguas sucias y desechos sólidos han deteriorado la calidad del agua."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes",
+          "text": "Un lugar tranquilo, con campos y huertos junto al río."
+        },
+        {
+          "title": "Hace 20 años",
+          "text": "Comienzan inundaciones frecuentes en temporada invernal."
+        },
+        {
+          "title": "Hoy",
+          "text": "Barrio de uso mixto (40 %): viviendas, comercios y servicios muy cerca del río."
+        }
+      ],
+      "species": [
+        {
+          "name": "Jacaranda",
+          "emoji": "💜",
+          "tag": "Ornamental",
+          "text": "Se llena de flores moradas.",
+          "fauna": false
+        },
+        {
+          "name": "Faique",
+          "emoji": "🌵",
+          "tag": "Nativo",
+          "text": "Árbol espinoso del bosque seco.",
+          "fauna": false
+        },
+        {
+          "name": "Sauce",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Sus raíces sujetan la orilla.",
+          "fauna": false
+        },
+        {
+          "name": "Aliso",
+          "emoji": "🌲",
+          "tag": "Nativo",
+          "text": "Da frescura y protege los taludes.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué se acumula bajo los puentes y hace que el río se desborde?",
+        "options": [
+          "Palos, troncos, arena y basura que arrastra el río.",
+          "Peces muy grandes.",
+          "Hojas de papel de los colegios."
+        ],
+        "answer": 0,
+        "explanation": "Esos materiales forman un tapón y el agua busca salir por los lados."
+      }
+    },
+    "puerta": {
+      "id": "puerta",
+      "code": "B2",
+      "order": 6,
+      "name": "Parque Bolívar – Puerta de la Ciudad",
+      "shortName": "Puerta de la Ciudad",
+      "zone": "centro",
+      "river": "malacatos",
+      "lat": -3.99239,
+      "lng": -79.20566,
+      "totem": 6,
+      "qr": "riova://totem/06",
+      "landmark": true,
+      "headline": "Amenaza de inundación: el día que el río se cobró la ciudad",
+      "tagline": "El corazón de Loja, donde el Malacatos llega al encuentro del Zamora.",
+      "description": "Tramo del Malacatos entre el Parque Bolívar y la Puerta de la Ciudad, en pleno centro histórico.",
+      "story": [
+        "El lunes 10 de marzo de 2025 cayó un aguacero récord: 76,6 litros por metro cuadrado en solo 24 horas.",
+        "El río Malacatos se desbordó, llenó las calles de lodo y el puente de la calle Imbabura colapsó.",
+        "La basura que se tira al río viaja hasta los puentes y forma “micro-represas”. Por eso, cuidar el río es tarea de todos."
+      ],
+      "fact": "El 10 de marzo de 2025 cayeron 76,6 litros de lluvia por metro cuadrado en 24 horas: ¡un récord que desbordó el Malacatos!",
+      "factTags": [
+        "Centro histórico",
+        "Puente Bolívar",
+        "10 de marzo 2025"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/puerta/1.webp",
+          "caption": "El Parque Bolívar en una postal antigua",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/puerta/2.webp",
+          "caption": "Ilustración: ayer y hoy del río en el centro",
+          "drawing": true
+        },
+        {
+          "asset": "assets/places/puerta/3.webp",
+          "caption": "Caricatura: ¡la contaminación contra el río Malacatos!",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Wilson Cabrera, 33 años",
+          "quote": "Los emprendedores nos vemos afectados cuando se desborda el río, porque se dañan nuestros productos."
+        },
+        {
+          "who": "Brithany, 17 años",
+          "quote": "El olor que sale del río es muy fuerte por los residuos que se botan allí."
+        },
+        {
+          "who": "Katherine Ruiz, 22 años",
+          "quote": "Me da inseguridad caminar por las aceras junto al río; debería haber más iluminación."
+        },
+        {
+          "who": "Vecino",
+          "quote": "No todo es culpa del municipio: las personas también tenemos que cuidar el río."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "inundacion",
+          "summary": "El desborde del 10 de marzo de 2025.",
+          "detail": "Una lluvia récord desbordó el río: calles con más de 50 cm de lodo y el puente de la calle Imbabura derrumbado."
+        },
+        {
+          "kind": "basura",
+          "summary": "El “efecto represa” de la basura.",
+          "detail": "Plásticos, palos y escombros se atoran bajo los puentes y tapan el río; en una tormenta, el agua se desborda."
+        },
+        {
+          "kind": "inseguridad",
+          "summary": "Orillas oscuras y descuidadas.",
+          "detail": "La falta de luz, la maleza y los escombros hacen que algunos tramos se sientan inseguros."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes",
+          "text": "El río era parte de la vida del centro; el Parque Bolívar era punto de encuentro."
+        },
+        {
+          "title": "Crecimiento",
+          "text": "La ciudad se hizo densa y el río perdió espacio entre calles y edificios."
+        },
+        {
+          "title": "10 de marzo de 2025",
+          "text": "Una lluvia récord desbordó el Malacatos y dañó el puente de la calle Imbabura."
+        }
+      ],
+      "species": [
+        {
+          "name": "Molle",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Árbol resistente de hojas finas.",
+          "fauna": false
+        },
+        {
+          "name": "Ceibo",
+          "emoji": "🌺",
+          "tag": "Nativo",
+          "text": "Flores rojas que atraen aves.",
+          "fauna": false
+        },
+        {
+          "name": "Palma fénix",
+          "emoji": "🌴",
+          "tag": "Introducida",
+          "text": "Adorna parques y avenidas.",
+          "fauna": false
+        },
+        {
+          "name": "Aves urbanas",
+          "emoji": "🐦",
+          "tag": "Fauna",
+          "text": "El 66 % de la fauna vista aquí son aves.",
+          "fauna": true
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué es el “efecto represa” de la basura?",
+        "options": [
+          "La basura se atora bajo los puentes y tapa el río, que luego se desborda.",
+          "Una represa hecha de botellas para guardar agua.",
+          "Un juego de los niños en el parque."
+        ],
+        "answer": 0,
+        "explanation": "Cada botella cuenta: juntas pueden bloquear el paso del agua."
+      }
+    },
+    "mayorista": {
+      "id": "mayorista",
+      "code": "B3",
+      "order": 7,
+      "name": "Sector El Mayorista",
+      "shortName": "El Mayorista",
+      "zone": "centro",
+      "river": "zamora",
+      "lat": -3.98712,
+      "lng": -79.20281,
+      "totem": 7,
+      "qr": "riova://totem/07",
+      "landmark": false,
+      "headline": "Entre memorias y el abandono",
+      "tagline": "El gran mercado de Loja, a orillas del río Zamora.",
+      "description": "Sector del Mercado Mayorista Gran Colombia, junto a la Av. Orillas del Zamora, muy cerca de la Puerta de la Ciudad.",
+      "story": [
+        "En los años 60 aquí había una plaza de ganado rodeada de cultivos, regados por los ríos Zamora y Malacatos.",
+        "Luego se canalizó el río Zamora y se construyó la Av. Orillas del Zamora: los campos se volvieron ciudad y comercio.",
+        "Hoy el Mayorista es un lugar lleno de vida comercial, pero las lluvias derrumbaron muros del río y faltan árboles y espacios verdes."
+      ],
+      "fact": "En los años 60, aquí funcionaba una plaza de ganado rodeada de cultivos junto al río Zamora.",
+      "factTags": [
+        "Mercado Gran Colombia",
+        "Av. Orillas del Zamora"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/mayorista/1.webp",
+          "caption": "El río Zamora junto al Mayorista",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/mayorista/2.webp",
+          "caption": "Muros del río derrumbados por las lluvias",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/mayorista/3.webp",
+          "caption": "Escombros en la orilla del río",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/mayorista/4.webp",
+          "caption": "Caminando junto al río",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/mayorista/5.webp",
+          "caption": "Collage histórico del sector",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Niño del barrio",
+          "quote": "¡Oh, mi pelota ha caído al río!"
+        },
+        {
+          "who": "Vecina",
+          "quote": "Qué triste… hay tantos escombros en la orilla del río."
+        },
+        {
+          "who": "Peatón",
+          "quote": "No puedo caminar, ¡las veredas ya no existen!"
+        },
+        {
+          "who": "Visitante del parque",
+          "quote": "Hay tanto espacio verde y ni un solo árbol grande que dé sombra."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "muros",
+          "summary": "Muros caídos que desvían el agua.",
+          "detail": "Las fuertes lluvias derrumbaron los muros que canalizan el río; sus restos afectan puentes y caminos."
+        },
+        {
+          "kind": "contaminacion",
+          "summary": "Aguas servidas y desechos del comercio.",
+          "detail": "El río recibe aguas sucias y basura del comercio, y se ha vuelto un foco de contaminación."
+        },
+        {
+          "kind": "abandono",
+          "summary": "Pocas áreas verdes y caminos intransitables.",
+          "detail": "Las veredas junto al río están destruidas y casi no hay sombra ni espacios para estar."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Años 60",
+          "text": "Plaza de ganado y cultivos junto al río, sobre el antiguo “Carretero Norte”."
+        },
+        {
+          "title": "Canalización",
+          "text": "Se semicanalizó el río Zamora y se abrió la Av. Orillas del Zamora."
+        },
+        {
+          "title": "Hoy",
+          "text": "Centro comercial de la ciudad, con un río que pide recuperar sus orillas."
+        }
+      ],
+      "species": [
+        {
+          "name": "Guararo",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Árbol de flores moradas.",
+          "fauna": false
+        },
+        {
+          "name": "Capulí",
+          "emoji": "🍒",
+          "tag": "Nativo",
+          "text": "Frutos dulces para las aves.",
+          "fauna": false
+        },
+        {
+          "name": "Aliso",
+          "emoji": "🌲",
+          "tag": "Nativo",
+          "text": "Da frescura y protege los taludes.",
+          "fauna": false
+        },
+        {
+          "name": "Álamo",
+          "emoji": "🌲",
+          "tag": "Introducido",
+          "text": "Alto y de hojas que se mueven con el viento.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué había en el sector Mayorista en los años 60?",
+        "options": [
+          "Una plaza de ganado rodeada de cultivos.",
+          "Un aeropuerto.",
+          "Una playa con arena."
+        ],
+        "answer": 0,
+        "explanation": "Los terrenos fértiles junto al río se usaban para cultivar y criar animales."
+      }
+    },
+    "jipiro": {
+      "id": "jipiro",
+      "code": "C1",
+      "order": 8,
+      "name": "Parque Jipiro",
+      "shortName": "Parque Jipiro",
+      "zone": "norte",
+      "river": "zamora",
+      "lat": -3.97275,
+      "lng": -79.20108,
+      "totem": 8,
+      "qr": "riova://totem/08",
+      "landmark": true,
+      "headline": "Jipiro: entre la belleza y la amenaza fluvial",
+      "tagline": "El parque más querido de Loja, con su laguna y sus aves.",
+      "description": "Parque Recreacional Jipiro, atravesado por el río Jipiro, afluente del Zamora; su laguna es refugio de aves.",
+      "story": [
+        "El Parque Jipiro es uno de los lugares favoritos de las familias lojanas. Lo atraviesa el río Jipiro, que desemboca en el Zamora.",
+        "Antes, este terreno era una finca agropecuaria de la familia Álvarez; hoy es un gran espacio público.",
+        "En invierno, las crecidas inundan las zonas bajas del parque y la laguna acumula sedimentos y basura."
+      ],
+      "fact": "El Parque Jipiro está atravesado por el río Jipiro, un afluente del Zamora; su laguna es refugio de aves.",
+      "factTags": [
+        "Laguna",
+        "Aves",
+        "Familias"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/jipiro/1.webp",
+          "caption": "Agua de la crecida dentro del Parque Jipiro",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/jipiro/2.webp",
+          "caption": "La laguna después de una crecida",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/jipiro/3.webp",
+          "caption": "Cómic: voces del parque",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Usuarios del parque",
+          "quote": "Esperamos soluciones para las inundaciones que se repiten cada invierno."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "inundacion",
+          "summary": "Crecidas que inundan las zonas bajas.",
+          "detail": "Cuando el Zamora y su afluente crecen, el agua entra al parque y pone en riesgo a los visitantes."
+        },
+        {
+          "kind": "contaminacion",
+          "summary": "La laguna se llena de residuos.",
+          "detail": "Tras cada crecida la laguna acumula sedimentos, basura y agua contaminada, y las aves pierden su refugio."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes",
+          "text": "Una finca agropecuaria de la familia Álvarez."
+        },
+        {
+          "title": "Parque Recreacional",
+          "text": "Se creó el parque y el barrio creció alrededor del espacio público."
+        },
+        {
+          "title": "2025",
+          "text": "Loja tiene unos 250 000 habitantes y Jipiro sigue siendo su gran pulmón verde."
+        }
+      ],
+      "species": [
+        {
+          "name": "Guayacán",
+          "emoji": "🌼",
+          "tag": "Nativo",
+          "text": "Se cubre de flores amarillas.",
+          "fauna": false
+        },
+        {
+          "name": "Sangre de drago",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Su savia roja es medicinal.",
+          "fauna": false
+        },
+        {
+          "name": "Cedro",
+          "emoji": "🌲",
+          "tag": "Nativo",
+          "text": "Da sombra y refugio a la fauna.",
+          "fauna": false
+        },
+        {
+          "name": "Aves acuáticas",
+          "emoji": "🦆",
+          "tag": "Fauna",
+          "text": "Viven en la laguna del parque.",
+          "fauna": true
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué río atraviesa el Parque Jipiro?",
+        "options": [
+          "El río Jipiro, afluente del Zamora.",
+          "El río Amazonas.",
+          "Ningún río."
+        ],
+        "answer": 0,
+        "explanation": "El río Jipiro lleva sus aguas al Zamora, el río más caudaloso del valle."
+      }
+    },
+    "la_paz": {
+      "id": "la_paz",
+      "code": "C2",
+      "order": 9,
+      "name": "Barrio La Paz",
+      "shortName": "La Paz",
+      "zone": "norte",
+      "river": "zamora",
+      "lat": -3.96976,
+      "lng": -79.20592,
+      "totem": 9,
+      "qr": "riova://totem/09",
+      "landmark": false,
+      "headline": "El río Zamora: un eje natural que une",
+      "tagline": "Barrios que crecieron junto al río y su sendero ecológico.",
+      "description": "Barrios La Paz, Las Pitas y La Inmaculada, a lo largo del río Zamora y su sendero ecológico.",
+      "story": [
+        "Hace más de 70 años, aquí había terrenos agrícolas y casas dispersas. Hoy es un corredor urbano que crece junto al río Zamora.",
+        "El río y su sendero ecológico unen los barrios y regulan el clima. Los vecinos aún conservan vegetación en la orilla.",
+        "Pero el sendero necesita luz, limpieza y bancas: sin eso, cada vez menos personas lo recorren."
+      ],
+      "fact": "En La Paz y Las Pitas, los vecinos conservan vegetación junto al río que funciona como barrera natural ante las crecidas.",
+      "factTags": [
+        "Sendero ecológico",
+        "Las Pitas",
+        "La Inmaculada"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/la_paz/1.webp",
+          "caption": "Ilustración: el sendero ecológico junto al Zamora",
+          "drawing": true
+        },
+        {
+          "asset": "assets/places/la_paz/2.webp",
+          "caption": "Vista satelital de La Paz, Las Pitas y La Inmaculada",
+          "drawing": false
+        }
+      ],
+      "voices": [
+        {
+          "who": "Vecina",
+          "quote": "Trato de venir a trotar en las mañanas, porque en la noche todo es oscuro y peligroso."
+        },
+        {
+          "who": "Vecino",
+          "quote": "Cada lluvia se lleva otro pedazo del talud y nadie viene a reforzarlo."
+        },
+        {
+          "who": "Vecina",
+          "quote": "No hay ni un bote cerca para tirar los desechos; la mayoría bota su basura al río."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "erosion",
+          "summary": "Cada lluvia se lleva parte del talud.",
+          "detail": "La orilla se desgasta con las crecidas y el sendero se llena de lodo."
+        },
+        {
+          "kind": "basura",
+          "summary": "Basura sin basureros cerca.",
+          "detail": "Al no haber basureros, algunas personas tiran sus desechos al río."
+        },
+        {
+          "kind": "inseguridad",
+          "summary": "Sendero oscuro y sin conexión.",
+          "detail": "Sin alumbrado, con puentes en mal estado y mal olor, pocos se animan a recorrerlo."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "1970",
+          "text": "Campos agrícolas y viviendas dispersas."
+        },
+        {
+          "title": "2003 – 2014",
+          "text": "Nuevas vías y equipamientos conectan el sector con el centro."
+        },
+        {
+          "title": "2024",
+          "text": "Un barrio denso que necesita parques y corredores verdes junto al río."
+        }
+      ],
+      "species": [
+        {
+          "name": "Sauce llorón",
+          "emoji": "🌳",
+          "tag": "Ribereño",
+          "text": "Estabiliza los taludes.",
+          "fauna": false
+        },
+        {
+          "name": "Aliso",
+          "emoji": "🌲",
+          "tag": "Nativo",
+          "text": "Da frescura y protege los taludes.",
+          "fauna": false
+        },
+        {
+          "name": "Higuera",
+          "emoji": "🌿",
+          "tag": "Árbol",
+          "text": "Sus frutos alimentan a las aves.",
+          "fauna": false
+        },
+        {
+          "name": "Mirlo",
+          "emoji": "🐦‍⬛",
+          "tag": "Ave",
+          "text": "Canta en los árboles junto al río.",
+          "fauna": true
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué hace la vegetación que los vecinos conservan en la orilla?",
+        "options": [
+          "Funciona como barrera natural frente a las crecidas.",
+          "Hace que el río se seque.",
+          "Atrae más basura."
+        ],
+        "answer": 0,
+        "explanation": "Las plantas y sus raíces frenan el agua y sujetan la tierra."
+      }
+    },
+    "amable_maria": {
+      "id": "amable_maria",
+      "code": "C3",
+      "order": 10,
+      "name": "Barrio Amable María",
+      "shortName": "Amable María",
+      "zone": "norte",
+      "river": "zamora",
+      "lat": -3.96175,
+      "lng": -79.21263,
+      "totem": 10,
+      "qr": "riova://totem/10",
+      "landmark": false,
+      "headline": "Río, residencia y verde natural: borde y conflicto urbano",
+      "tagline": "Un corredor verde que divide… y también une barrios.",
+      "description": "Barrio junto al río Zamora y su sendero ecológico, en el norte de la ciudad.",
+      "story": [
+        "El río Zamora pasa entre Amable María y los barrios vecinos. Su corredor verde es ideal para caminar, trotar o pasear mascotas.",
+        "Pero cuando llueve fuerte, las alcantarillas no alcanzan y el agua se empoza en las partes bajas del barrio.",
+        "La quebrada de Bellavista arrastra lodo y piedras a las calles en temporada de lluvias."
+      ],
+      "fact": "Las calles y los techos no absorben agua: la lluvia corre rápido hacia el río en lugar de filtrarse en la tierra.",
+      "factTags": [
+        "Sendero",
+        "Quebrada Bellavista"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/amable_maria/1.webp",
+          "caption": "Calle mojada después de la lluvia",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/amable_maria/2.webp",
+          "caption": "Vista satelital: el río Zamora entre barrios",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/amable_maria/3.webp",
+          "caption": "Ilustración: calle inundada por la lluvia",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Vecino, 70 años",
+          "quote": "Esta zona se inunda cuando las lluvias son fuertes, porque las alcantarillas no abastecen y se tapan."
+        },
+        {
+          "who": "Vecina",
+          "quote": "Todas las mañanas salgo al sendero a caminar, es la hora más segura."
+        },
+        {
+          "who": "Ganadera, 53 años",
+          "quote": "En mis terrenos no se encharca, porque al tener mucho verde el agua se absorbe."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "inundacion",
+          "summary": "Alcantarillas que colapsan con cada lluvia.",
+          "detail": "El agua baja por las calles, se empoza en las partes bajas y llega a las casas."
+        },
+        {
+          "kind": "contaminacion",
+          "summary": "Aguas residuales sin tratar.",
+          "detail": "Llegan descargas sin tratamiento al río y producen malos olores."
+        },
+        {
+          "kind": "erosion",
+          "summary": "Sedimentos de la quebrada Bellavista.",
+          "detail": "La quebrada arrastra lodo y piedras a las vías, afectando a carros y peatones."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Mediados del siglo XX",
+          "text": "Zonas naturales que absorbían la lluvia."
+        },
+        {
+          "title": "Crecimiento",
+          "text": "Casas y comercios cubrieron el suelo y el agua corre más rápido al río."
+        },
+        {
+          "title": "Hoy",
+          "text": "Un corredor verde con gran potencial para la recreación, si se cuida."
+        }
+      ],
+      "species": [
+        {
+          "name": "Acacia blanca",
+          "emoji": "🌼",
+          "tag": "Árbol",
+          "text": "Aporta color, sombra y calma.",
+          "fauna": false
+        },
+        {
+          "name": "Álamo",
+          "emoji": "🌲",
+          "tag": "Árbol",
+          "text": "Alto y movido por el viento.",
+          "fauna": false
+        },
+        {
+          "name": "Fresno",
+          "emoji": "🌳",
+          "tag": "Árbol",
+          "text": "Crece hasta 40 m de alto.",
+          "fauna": false
+        },
+        {
+          "name": "Sauce",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Sus raíces sujetan la orilla.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Por qué los terrenos con mucho verde no se encharcan tanto?",
+        "options": [
+          "Porque la tierra con plantas absorbe el agua de lluvia.",
+          "Porque allí nunca llueve.",
+          "Porque el pasto empuja el agua al cielo."
+        ],
+        "answer": 0,
+        "explanation": "El suelo verde es como una esponja; el cemento, no."
+      }
+    },
+    "comil": {
+      "id": "comil",
+      "code": "C4",
+      "order": 11,
+      "name": "Sector Comil – La Banda",
+      "shortName": "Comil",
+      "zone": "norte",
+      "river": "zamora",
+      "lat": -3.94968,
+      "lng": -79.21962,
+      "totem": 11,
+      "qr": "riova://totem/11",
+      "landmark": false,
+      "headline": "Río de memoria y vida lojana",
+      "tagline": "Donde antes había una “playita” junto al río.",
+      "description": "Barrio La Banda, junto al Colegio Militar (Comil) y al río Zamora, con huertas, ganadería y un sendero ecológico.",
+      "story": [
+        "La Banda era famosa por sus huertas y cañaverales: las familias cultivaban maíz, fréjol y hortalizas con agua del río.",
+        "Cerca del Colegio Militar había caminos empedrados y potreros hasta la orilla. Los niños jugaban y cruzaban el río por pequeños puentes.",
+        "Entre 1950 y 1980 se canalizó el río. Hoy hay escombros y basura, y los vecinos extrañan el río de antes."
+      ],
+      "fact": "Antes, en La Banda había una “playita” junto al río donde el agua bajaba suave y los niños jugaban.",
+      "factTags": [
+        "Colegio Militar",
+        "Huertas",
+        "Memoria"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/comil/1.webp",
+          "caption": "El Zamora junto al barrio La Banda",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/comil/2.webp",
+          "caption": "El río y su orilla de tierra",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/comil/3.webp",
+          "caption": "Puente y fábricas junto al río",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/comil/4.webp",
+          "caption": "El Zamora sigue su viaje al norte",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/comil/5.webp",
+          "caption": "Agua turquesa entre piedras",
+          "drawing": false
+        }
+      ],
+      "voices": [
+        {
+          "who": "Don Alberto, 69 años",
+          "quote": "Antes teníamos una playita aquí abajo, donde el agua bajaba suave. Con el deslave se la llevó toda."
+        },
+        {
+          "who": "Doña Teresa, 62 años",
+          "quote": "Cuando llegué, el río era clarito. Se podía ver el fondo. Ahora da tristeza."
+        },
+        {
+          "who": "Sra. Beatriz, 54 años",
+          "quote": "Ya no hay árboles como antes que frenaban el agua. Todo eso se ha ido perdiendo."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "basura",
+          "summary": "El río usado como botadero.",
+          "detail": "Algunas personas tiran basura y escombros al río, y eso produce malos olores."
+        },
+        {
+          "kind": "contaminacion",
+          "summary": "Espuma, jabones y aguas residuales.",
+          "detail": "Hay descargas directas de aguas sucias, aunque el barrio tiene alcantarillado."
+        },
+        {
+          "kind": "muros",
+          "summary": "Canalización y pérdida de vegetación.",
+          "detail": "Los muros de hormigón quitaron la vegetación de la orilla y el agua corre más rápido cuando llueve."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes de 1950",
+          "text": "Huertas, cañaverales y una “playita” donde jugaban los niños."
+        },
+        {
+          "title": "1950 – 1980",
+          "text": "Primeras obras de canalización para controlar inundaciones."
+        },
+        {
+          "title": "Hoy",
+          "text": "Barrio residencial que recuerda con cariño al río limpio de antes."
+        }
+      ],
+      "species": [
+        {
+          "name": "Planta paraguas",
+          "emoji": "☂️",
+          "tag": "Planta",
+          "text": "¡Sus hojas gigantes sirven de paraguas!",
+          "fauna": false
+        },
+        {
+          "name": "Molle",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Árbol resistente del valle.",
+          "fauna": false
+        },
+        {
+          "name": "Faique",
+          "emoji": "🌵",
+          "tag": "Nativo",
+          "text": "Árbol espinoso del bosque seco.",
+          "fauna": false
+        },
+        {
+          "name": "Guararo",
+          "emoji": "🌸",
+          "tag": "Nativo",
+          "text": "Flores que alegran la ribera.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Qué cultivaban antes las familias de La Banda con el agua del río?",
+        "options": [
+          "Maíz, fréjol y hortalizas.",
+          "Hielo.",
+          "Nada, el río no se usaba."
+        ],
+        "answer": 0,
+        "explanation": "Las tierras junto al río eran muy fértiles."
+      }
+    },
+    "sauces1": {
+      "id": "sauces1",
+      "code": "C5",
+      "order": 12,
+      "name": "Barrio Sauces Norte I",
+      "shortName": "Sauces Norte I",
+      "zone": "norte",
+      "river": "zamora",
+      "lat": -3.93902,
+      "lng": -79.22289,
+      "totem": 12,
+      "qr": "riova://totem/12",
+      "landmark": false,
+      "headline": "De lote baldío a corazón popular: la historia que no se cuenta",
+      "tagline": "“Antes aquí no había nada… ahora tenemos de todo”.",
+      "description": "Barrio nacido de un programa de vivienda de 1986, junto al río Zamora en el norte de Loja.",
+      "story": [
+        "Hace unas décadas, Sauces Norte era un terreno polvoriento con lotes baldíos. Hoy es un barrio con vida propia.",
+        "Sus canchas reúnen a familias, jóvenes y adultos mayores: el deporte también construye comunidad.",
+        "El río que lo atraviesa recibe llantas, plásticos y basura. A un lado pasan los buses; al otro, el ganado pasta en la orilla."
+      ],
+      "fact": "El barrio Sauces Norte nació en 1986 como un programa de vivienda de la Junta Nacional de Vivienda.",
+      "factTags": [
+        "Programa de vivienda",
+        "Canchas",
+        "Comunidad"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/sauces1/1.webp",
+          "caption": "Panorámica de Sauces Norte",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces1/2.webp",
+          "caption": "Foto aérea de 1962: aquí aún había campos",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces1/3.webp",
+          "caption": "La zona hoy, llena de casas",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces1/4.webp",
+          "caption": "Árbol grande en el barrio",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces1/5.webp",
+          "caption": "Cómic: ¿cómo se siente vivir en Sauces Norte?",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Morador",
+          "quote": "Antes aquí no había nada, ni calles, ni luz, ni agua. Ahora tenemos de todo, aunque falta mejorar muchas cosas."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "basura",
+          "summary": "Llantas, plásticos y desechos en el río.",
+          "detail": "El mal manejo de la basura llena las orillas y el cauce, y afecta la salud de los vecinos."
+        },
+        {
+          "kind": "inundacion",
+          "summary": "Calles que se inundan.",
+          "detail": "Sin un buen drenaje, el agua de lluvia baja por la avenida y se acumula entre las casas."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "1962",
+          "text": "Campos y caminos de tierra."
+        },
+        {
+          "title": "1986",
+          "text": "Nace el programa de vivienda Sauces Norte."
+        },
+        {
+          "title": "2024",
+          "text": "Un barrio conectado por la vía Sauces Norte – Solamar – Jimbilla."
+        }
+      ],
+      "species": [
+        {
+          "name": "Nogal",
+          "emoji": "🌰",
+          "tag": "Árbol",
+          "text": "Da nueces y mucha sombra.",
+          "fauna": false
+        },
+        {
+          "name": "Higuerón",
+          "emoji": "🌳",
+          "tag": "Árbol",
+          "text": "Árbol grande de raíces fuertes.",
+          "fauna": false
+        },
+        {
+          "name": "Aliso",
+          "emoji": "🌲",
+          "tag": "Nativo",
+          "text": "Da frescura y protege los taludes.",
+          "fauna": false
+        },
+        {
+          "name": "Faique",
+          "emoji": "🌵",
+          "tag": "Nativo",
+          "text": "Árbol espinoso del bosque seco.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿En qué año nació el programa de vivienda Sauces Norte?",
+        "options": [
+          "En 1986.",
+          "En 1492.",
+          "En 2050."
+        ],
+        "answer": 0,
+        "explanation": "Lo promovió la Junta Nacional de Vivienda en las afueras de la ciudad."
+      }
+    },
+    "sauces2": {
+      "id": "sauces2",
+      "code": "C6",
+      "order": 13,
+      "name": "Barrio Sauces Norte II",
+      "shortName": "Sauces Norte II",
+      "zone": "norte",
+      "river": "zamora",
+      "lat": -3.92693,
+      "lng": -79.22458,
+      "totem": 13,
+      "qr": "riova://totem/13",
+      "landmark": false,
+      "headline": "Un barrio en zona de alto riesgo por inundaciones",
+      "tagline": "Campos, cultivos y la planta que limpia el agua de Loja.",
+      "description": "Barrio productivo del norte, con cultivos, ganado y la planta de tratamiento de aguas residuales junto al Zamora.",
+      "story": [
+        "Aquí todavía manda el verde: hay cultivos de plátano, café y caña, y ganado junto al río.",
+        "En el barrio está la planta de tratamiento de aguas residuales, pero aún no alcanza a limpiar toda el agua sucia que llega al río.",
+        "El 13 de marzo de 2025, fuertes lluvias inundaron ocho sectores del norte de Loja, entre ellos Sauces Norte."
+      ],
+      "fact": "En Sauces Norte está la planta que limpia las aguas residuales de Loja, pero gran parte del agua sucia aún llega al río sin tratar.",
+      "factTags": [
+        "Planta de tratamiento",
+        "Cultivos",
+        "Ganado"
+      ],
+      "photos": [
+        {
+          "asset": "assets/places/sauces2/1.webp",
+          "caption": "Ganado pastando junto al río",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces2/2.webp",
+          "caption": "Campos y cultivos del barrio",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces2/3.webp",
+          "caption": "Una de las vías de tierra del barrio",
+          "drawing": false
+        },
+        {
+          "asset": "assets/places/sauces2/4.webp",
+          "caption": "Corte: el río, la vía y el puente",
+          "drawing": true
+        }
+      ],
+      "voices": [
+        {
+          "who": "Morador",
+          "quote": "Hace 10 años se inundaron las aulas de la escuela del barrio; el agua bajaba por la carretera como un río."
+        }
+      ],
+      "problems": [
+        {
+          "kind": "contaminacion",
+          "summary": "Agua sin tratar que llega al río.",
+          "detail": "Los colectores llevan aguas residuales a la planta, pero no se alcanza a tratar todo el caudal y el río se sigue contaminando."
+        },
+        {
+          "kind": "inundacion",
+          "summary": "Barrio en zona de alto riesgo.",
+          "detail": "Con las lluvias fuertes, el agua baja por las calles y el río puede desbordarse."
+        },
+        {
+          "kind": "basura",
+          "summary": "Sin recolección de basura.",
+          "detail": "Parte del barrio no tiene alcantarillado ni recolección, y los desechos terminan en el entorno natural."
+        }
+      ],
+      "timeline": [
+        {
+          "title": "Antes",
+          "text": "Tierras de cultivo y pastoreo junto al río."
+        },
+        {
+          "title": "Hace 20 años",
+          "text": "Los vecinos conviven con lodo en invierno y polvo en verano."
+        },
+        {
+          "title": "13 de marzo de 2025",
+          "text": "Lluvias intensas inundaron ocho sectores del norte, entre ellos Sauces Norte."
+        }
+      ],
+      "species": [
+        {
+          "name": "Plátano",
+          "emoji": "🍌",
+          "tag": "Cultivo",
+          "text": "Se cultiva junto al río.",
+          "fauna": false
+        },
+        {
+          "name": "Café",
+          "emoji": "☕",
+          "tag": "Cultivo",
+          "text": "Crece en el clima templado del valle.",
+          "fauna": false
+        },
+        {
+          "name": "Caña de azúcar",
+          "emoji": "🎋",
+          "tag": "Cultivo",
+          "text": "Dulce y muy alta.",
+          "fauna": false
+        },
+        {
+          "name": "Sauce",
+          "emoji": "🌳",
+          "tag": "Nativo",
+          "text": "Sus raíces sujetan la orilla.",
+          "fauna": false
+        }
+      ],
+      "quiz": {
+        "question": "¿Para qué sirve la planta de tratamiento de aguas residuales?",
+        "options": [
+          "Para limpiar el agua sucia antes de devolverla al río.",
+          "Para fabricar lluvia.",
+          "Para criar peces de colores."
+        ],
+        "answer": 0,
+        "explanation": "Mientras más agua se trate, más limpio llega el Zamora a la Amazonía."
+      }
+    }
+  },
+  "quizBank": {
+    "q01": {
+      "question": "¿Junto a qué lugar se unen el río Malacatos y el Zamora Huayco para formar el río Zamora?",
+      "options": [
+        "Junto a la Puerta de la Ciudad",
+        "En el Parque Jipiro",
+        "En el aeropuerto",
+        "En Vilcabamba"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q02": {
+      "question": "¿Qué día de 2025 una lluvia récord desbordó el Malacatos y dañó el puente de la calle Imbabura?",
+      "options": [
+        "El 1 de enero",
+        "El 10 de marzo",
+        "El 24 de diciembre",
+        "El 31 de octubre"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q03": {
+      "question": "¿Qué mercado está junto al río Zamora en el sector El Mayorista?",
+      "options": [
+        "Mercado Gran Colombia",
+        "Mercado del Mar",
+        "Mercado Espacial",
+        "Ninguno"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q04": {
+      "question": "Verdadero o falso: “La vegetación ayuda a proteger el río”.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q05": {
+      "question": "Verdadero o falso: “El río no necesita cuidado humano”.",
+      "options": [
+        "Verdadero",
+        "Falso"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q06": {
+      "question": "¿Qué es el “desarenador” del Parque Lineal La Tebaida?",
+      "options": [
+        "Una pequeña represa que ayuda a regular el caudal",
+        "Un tobogán",
+        "Una fábrica de arena",
+        "Un puente colgante"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q07": {
+      "question": "¿Qué pasa cuando la basura se atora debajo de los puentes?",
+      "options": [
+        "Nada",
+        "Forma un tapón y el río se desborda",
+        "El río se limpia solo",
+        "Los peces la reciclan"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q08": {
+      "question": "¿En qué meses llueve más en Loja y el Malacatos suele crecer?",
+      "options": [
+        "De marzo a mayo",
+        "Solo en agosto",
+        "Nunca llueve",
+        "Solo en Navidad"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q09": {
+      "question": "¿Qué dos ríos atraviesan la ciudad de Loja?",
+      "options": [
+        "Malacatos y Zamora",
+        "Guayas y Daule",
+        "Napo y Pastaza",
+        "Amazonas y Nilo"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q10": {
+      "question": "¿En qué parque de Loja hay una laguna con réplicas de construcciones del mundo?",
+      "options": [
+        "La Tebaida",
+        "Jipiro",
+        "Pucará",
+        "Las Pitas"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q11": {
+      "question": "¿Qué árbol de las orillas sujeta la tierra con sus raíces?",
+      "options": [
+        "Cactus",
+        "Sauce",
+        "Palmera de playa",
+        "Pino de plástico"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q12": {
+      "question": "Cuando el Malacatos y el Zamora se unen, ¿qué río continúa?",
+      "options": [
+        "El Malacatos",
+        "Ninguno",
+        "El Zamora",
+        "El Guayas"
+      ],
+      "answer": 2,
+      "explanation": "",
+      "active": true
+    },
+    "q13": {
+      "question": "¿A qué gran región llegan finalmente las aguas del río Zamora?",
+      "options": [
+        "A la Amazonía",
+        "Al desierto",
+        "A Galápagos",
+        "A la Antártida"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q14": {
+      "question": "¿Qué hacemos con la basura cuando visitamos el río?",
+      "options": [
+        "La dejamos en la orilla",
+        "La llevamos a un basurero",
+        "La lanzamos al agua",
+        "La escondemos"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q15": {
+      "question": "¿Qué animal andino tiene manchas claras alrededor de los ojos?",
+      "options": [
+        "Cóndor",
+        "Oso de anteojos",
+        "Llama",
+        "Colibrí"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q16": {
+      "question": "Loja es conocida en Ecuador como la…",
+      "options": [
+        "Capital musical",
+        "Capital del mar",
+        "Ciudad del desierto",
+        "Ciudad de los volcanes"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q17": {
+      "question": "¿Qué pasa si se cortan los árboles de las orillas?",
+      "options": [
+        "El río se vuelve más limpio",
+        "Nada",
+        "La tierra se erosiona y el río se desborda más fácil",
+        "Llueve menos"
+      ],
+      "answer": 2,
+      "explanation": "",
+      "active": true
+    },
+    "q18": {
+      "question": "¿Qué mide un sensor de pH en el río?",
+      "options": [
+        "La velocidad del viento",
+        "Si el agua es ácida o básica",
+        "Cuántos peces hay",
+        "La hora"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q19": {
+      "question": "¿Qué parque lineal del sur de Loja acompaña al río Malacatos?",
+      "options": [
+        "Jipiro",
+        "La Tebaida",
+        "Orillas del Zamora",
+        "Pucará"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q20": {
+      "question": "¿Qué ave gigante de los Andes es símbolo del Ecuador?",
+      "options": [
+        "Cóndor andino",
+        "Pingüino",
+        "Loro",
+        "Gaviota"
+      ],
+      "answer": 0,
+      "explanation": "",
+      "active": true
+    },
+    "q21": {
+      "question": "¿Qué es una cuenca hidrográfica?",
+      "options": [
+        "Un recipiente de cocina",
+        "El territorio donde la lluvia corre hacia un mismo río",
+        "Un tipo de pez",
+        "Una montaña sin agua"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    },
+    "q22": {
+      "question": "¿Qué acción ayuda a cuidar el agua en casa?",
+      "options": [
+        "Dejar la llave abierta",
+        "Cerrar la llave mientras te cepillas",
+        "Lavar el carro todos los días",
+        "Tirar aceite al lavabo"
+      ],
+      "answer": 1,
+      "explanation": "",
+      "active": true
+    }
+  },
+  "games": {
+    "rescata": {
+      "title": "Rescata el Río",
+      "description": "Recoge la basura y devuelve la vida al río Malacatos.",
+      "difficulty": "Fácil",
+      "reward": 50,
+      "replayReward": 10,
+      "isNew": false,
+      "unlock": {
+        "open": true,
+        "label": ""
+      }
+    },
+    "quiz": {
+      "title": "¿Cuánto sabes de Loja?",
+      "description": "Responde preguntas y demuestra cuánto sabes sobre los ríos.",
+      "difficulty": "Fácil",
+      "reward": 30,
+      "replayReward": 10,
+      "isNew": false,
+      "unlock": {
+        "open": true,
+        "label": ""
+      }
+    },
+    "detective": {
+      "title": "Detective de Inundaciones",
+      "description": "Investiga qué provoca las inundaciones y encuentra las causas.",
+      "difficulty": "Media",
+      "reward": 60,
+      "replayReward": 10,
+      "isNew": false,
+      "unlock": {
+        "open": false,
+        "level": 2,
+        "zone": "centro",
+        "label": "Llega al Nivel 2 o escanea un tótem de la Centro"
+      }
+    },
+    "palabras": {
+      "title": "Encuentra Palabras",
+      "description": "Encuentra las palabras escondidas antes de completar el desafío.",
+      "difficulty": "Media",
+      "reward": 40,
+      "replayReward": 10,
+      "isNew": false,
+      "unlock": {
+        "open": false,
+        "level": 2,
+        "zone": "centro",
+        "label": "Llega al Nivel 2 o escanea un tótem de la Centro"
+      }
+    },
+    "camino": {
+      "title": "El Camino del Agua",
+      "description": "Guía el agua por el camino correcto hasta llegar al río Zamora.",
+      "difficulty": "Fácil",
+      "reward": 40,
+      "replayReward": 10,
+      "isNew": false,
+      "unlock": {
+        "open": false,
+        "level": 3,
+        "zone": "norte",
+        "label": "Llega al Nivel 3 o escanea un tótem de la Zona Norte"
+      }
+    },
+    "guardianes": {
+      "title": "Guardianes Naturaleza",
+      "description": "Descubre las plantas y animales que viven junto a nuestros ríos.",
+      "difficulty": "Media",
+      "reward": 50,
+      "replayReward": 10,
+      "isNew": false,
+      "unlock": {
+        "open": false,
+        "level": 3,
+        "zone": "norte",
+        "label": "Llega al Nivel 3 o escanea un tótem de la Zona Norte"
+      }
+    },
+    "mitos": {
+      "title": "Mitos y Verdades",
+      "description": "Desliza cada tarjeta: ¿verdadero o falso? Descubre los mitos del río.",
+      "difficulty": "Fácil",
+      "reward": 40,
+      "replayReward": 10,
+      "isNew": true,
+      "unlock": {
+        "open": false,
+        "level": 4,
+        "zone": "sur",
+        "label": "Llega al Nivel 4 o escanea un tótem de la Zona Sur"
+      }
+    },
+    "recicla": {
+      "title": "Recicla en la Orilla",
+      "description": "Arrastra cada residuo al tacho correcto antes de que llegue al río.",
+      "difficulty": "Media",
+      "reward": 50,
+      "replayReward": 10,
+      "isNew": true,
+      "unlock": {
+        "open": false,
+        "level": 5,
+        "scans": 3,
+        "label": "Llega al Nivel 5 o escanea 3 tótems"
+      }
+    },
+    "rompecabezas": {
+      "title": "Rompecabezas del Río",
+      "description": "Ordena las piezas y descubre fotos reales de los sectores de Loja.",
+      "difficulty": "Media",
+      "reward": 60,
+      "replayReward": 10,
+      "isNew": true,
+      "unlock": {
+        "open": false,
+        "level": 6,
+        "scans": 6,
+        "label": "Llega al Nivel 6 o escanea 6 tótems"
+      }
+    }
+  },
+  "medals": {
+    "primera_huella": {
+      "title": "Primera Huella",
+      "howTo": "Escanea el QR de tu primer tótem.",
+      "secret": "Todo gran guardián empezó con un solo paso junto al río.",
+      "type": "qr"
+    },
+    "guardian_sur": {
+      "title": "Guardián del Sur",
+      "howTo": "Escanea los 4 tótems de la Zona Sur.",
+      "secret": "Por el sur, el Malacatos entra a Loja entre huertos y montañas.",
+      "type": "qr"
+    },
+    "corazon_loja": {
+      "title": "Corazón de Loja",
+      "howTo": "Escanea los 3 tótems del Centro.",
+      "secret": "El 10 de marzo de 2025 una lluvia récord desbordó el Malacatos en el centro.",
+      "type": "qr"
+    },
+    "ruta_natural": {
+      "title": "Ruta Natural",
+      "howTo": "Escanea los 6 tótems de la Zona Norte.",
+      "secret": "Por el norte, el Zamora busca su salida hacia la Amazonía.",
+      "type": "qr"
+    },
+    "guardian_malacatos": {
+      "title": "Guardián Malacatos",
+      "howTo": "Escanea todos los tótems del río Malacatos.",
+      "secret": "El Malacatos cruza Loja por el oeste y se une al Zamora Huayco en la Puerta de la Ciudad.",
+      "type": "qr"
+    },
+    "explorador_zamora": {
+      "title": "Explorador Zamora",
+      "howTo": "Escanea todos los tótems del río Zamora.",
+      "secret": "El Zamora recibe al Malacatos y lleva sus aguas hasta la Amazonía.",
+      "type": "qr"
+    },
+    "confluencia": {
+      "title": "Donde los Ríos se Abrazan",
+      "howTo": "Escanea el tótem de la Puerta de la Ciudad.",
+      "secret": "Junto a la Puerta de la Ciudad, el Malacatos y el Zamora Huayco forman el río Zamora.",
+      "type": "qr"
+    },
+    "gran_recorrido": {
+      "title": "Gran Recorrido",
+      "howTo": "Escanea los 13 tótems de Loja.",
+      "secret": "¡Recorriste los ríos de Loja de sur a norte! Eres su gran guardián.",
+      "type": "qr"
+    },
+    "nivel_2": {
+      "title": "Brote del Río",
+      "howTo": "Llega al Nivel 2 (Explorador).",
+      "secret": "Las raíces de los sauces sujetan la tierra de las orillas.",
+      "type": "nivel"
+    },
+    "nivel_3": {
+      "title": "Aprendiz del Agua",
+      "howTo": "Llega al Nivel 3 (Aprendiz del Agua).",
+      "secret": "Los bosques guardan la lluvia y la sueltan poco a poco al río.",
+      "type": "nivel"
+    },
+    "nivel_4": {
+      "title": "Guardián del Río",
+      "howTo": "Llega al Nivel 4 (Guardián del Río).",
+      "secret": "La basura bajo los puentes forma tapones que desbordan el río.",
+      "type": "nivel"
+    },
+    "nivel_5": {
+      "title": "Protector Fluvial",
+      "howTo": "Llega al Nivel 5 (Protector Fluvial).",
+      "secret": "Una planta de tratamiento limpia el agua sucia antes de volver al río.",
+      "type": "nivel"
+    },
+    "nivel_6": {
+      "title": "Héroe de Loja",
+      "howTo": "Llega al Nivel 6 (Héroe de Loja).",
+      "secret": "Cuidar el río es proteger la vida y la identidad de Loja.",
+      "type": "nivel"
+    },
+    "nivel_8": {
+      "title": "Gran Guardián",
+      "howTo": "Llega al Nivel 8 (Gran Guardián).",
+      "secret": "Llegaste a la cima: ¡ahora enseña a otros a cuidar los ríos!",
+      "type": "nivel"
+    }
+  },
+  "missions": {
+    "m01": {
+      "title": "Rescata La Tebaida",
+      "description": "Recoge residuos a orillas del río en Rescata el Río.",
+      "game": "rescata",
+      "reward": 50,
+      "emoji": "🧹"
+    },
+    "m02": {
+      "title": "Caso Malacatos",
+      "description": "Descubre por qué subió el nivel del río en Detective de Inundaciones.",
+      "game": "detective",
+      "reward": 50,
+      "emoji": "🔎"
+    },
+    "m03": {
+      "title": "Ruta hasta el Zamora",
+      "description": "Conecta los canales para llevar el agua limpia al río Zamora.",
+      "game": "camino",
+      "reward": 50,
+      "emoji": "🚰"
+    },
+    "m04": {
+      "title": "Amigos de la ribera",
+      "description": "Encuentra todas las parejas de flora y fauna del río.",
+      "game": "guardianes",
+      "reward": 50,
+      "emoji": "🌿"
+    },
+    "m05": {
+      "title": "Sabio de Loja",
+      "description": "Gana el reto de preguntas sobre los ríos de Loja.",
+      "game": "quiz",
+      "reward": 50,
+      "emoji": "🧠"
+    },
+    "m06": {
+      "title": "Palabras del agua",
+      "description": "Encuentra todas las palabras escondidas en la sopa de letras.",
+      "game": "palabras",
+      "reward": 50,
+      "emoji": "🔤"
+    },
+    "m07": {
+      "title": "Cazamitos",
+      "description": "Separa los mitos de las verdades sobre el río Zamora.",
+      "game": "mitos",
+      "reward": 50,
+      "emoji": "🃏"
+    },
+    "m08": {
+      "title": "Orilla limpia",
+      "description": "Clasifica los residuos en el tacho correcto antes de que lleguen al río.",
+      "game": "recicla",
+      "reward": 50,
+      "emoji": "♻️"
+    },
+    "m09": {
+      "title": "Foto perdida",
+      "description": "Arma el rompecabezas de un sector de Loja.",
+      "game": "rompecabezas",
+      "reward": 50,
+      "emoji": "🧩"
+    }
+  },
+  "sensors": {
+    "capuli2": {
+      "placeId": "capuli2",
+      "name": "Sector Capulí II",
+      "source": "simulado",
+      "baseline": {
+        "quality": 89.94,
+        "level": 0.67,
+        "temperature": 16.1,
+        "ph": 7.29
+      }
+    },
+    "capuli1": {
+      "placeId": "capuli1",
+      "name": "Sector Capulí I",
+      "source": "simulado",
+      "baseline": {
+        "quality": 70.47,
+        "level": 0.69,
+        "temperature": 15.83,
+        "ph": 7.49
+      }
+    },
+    "tebaida": {
+      "placeId": "tebaida",
+      "name": "Parque Lineal La Tebaida",
+      "source": "simulado",
+      "baseline": {
+        "quality": 87.22,
+        "level": 0.68,
+        "temperature": 14.86,
+        "ph": 7.55
+      }
+    },
+    "supermaxi": {
+      "placeId": "supermaxi",
+      "name": "Sector Supermaxi",
+      "source": "simulado",
+      "baseline": {
+        "quality": 93.45,
+        "level": 0.77,
+        "temperature": 17.35,
+        "ph": 7.15
+      }
+    },
+    "el_leon": {
+      "placeId": "el_leon",
+      "name": "Sector El León",
+      "source": "simulado",
+      "baseline": {
+        "quality": 92.69,
+        "level": 0.88,
+        "temperature": 15.0,
+        "ph": 7.33
+      }
+    },
+    "puerta": {
+      "placeId": "puerta",
+      "name": "Parque Bolívar – Puerta de la Ciudad",
+      "source": "simulado",
+      "baseline": {
+        "quality": 90.44,
+        "level": 0.75,
+        "temperature": 15.23,
+        "ph": 7.5
+      }
+    },
+    "mayorista": {
+      "placeId": "mayorista",
+      "name": "Sector El Mayorista",
+      "source": "simulado",
+      "baseline": {
+        "quality": 92.14,
+        "level": 0.93,
+        "temperature": 16.33,
+        "ph": 7.41
+      }
+    },
+    "jipiro": {
+      "placeId": "jipiro",
+      "name": "Parque Jipiro",
+      "source": "simulado",
+      "baseline": {
+        "quality": 86.5,
+        "level": 0.91,
+        "temperature": 15.69,
+        "ph": 7.54
+      }
+    },
+    "la_paz": {
+      "placeId": "la_paz",
+      "name": "Barrio La Paz",
+      "source": "simulado",
+      "baseline": {
+        "quality": 92.65,
+        "level": 0.78,
+        "temperature": 16.62,
+        "ph": 7.26
+      }
+    },
+    "amable_maria": {
+      "placeId": "amable_maria",
+      "name": "Barrio Amable María",
+      "source": "simulado",
+      "baseline": {
+        "quality": 86.45,
+        "level": 0.61,
+        "temperature": 17.28,
+        "ph": 7.19
+      }
+    },
+    "comil": {
+      "placeId": "comil",
+      "name": "Sector Comil – La Banda",
+      "source": "simulado",
+      "baseline": {
+        "quality": 89.79,
+        "level": 0.66,
+        "temperature": 14.89,
+        "ph": 7.09
+      }
+    },
+    "sauces1": {
+      "placeId": "sauces1",
+      "name": "Barrio Sauces Norte I",
+      "source": "simulado",
+      "baseline": {
+        "quality": 87.56,
+        "level": 0.79,
+        "temperature": 17.1,
+        "ph": 7.38
+      }
+    },
+    "sauces2": {
+      "placeId": "sauces2",
+      "name": "Barrio Sauces Norte II",
+      "source": "simulado",
+      "baseline": {
+        "quality": 70.71,
+        "level": 0.69,
+        "temperature": 17.06,
+        "ph": 7.5
+      }
+    }
+  },
+  "meta": {
+    "content": {
+      "credit": "Fotos e información: periódico «Todo lo que necesita conocer sobre los afluentes que recorren nuestra ciudad», Taller de Proyectos Urbano Arquitectónicos II, Loja, enero 2026.",
+      "sectors": 13,
+      "quizQuestions": 22
+    }
+  }
+}

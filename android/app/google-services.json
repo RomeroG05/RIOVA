@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "325607436898",
+    "project_id": "appriova",
+    "storage_bucket": "appriova.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325607436898:android:f63334c6970bcc398b973b",
+        "android_client_info": {
+          "package_name": "com.riova.riova"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1taaczEk8qdwwxQ7tdonC3KDniuoBOYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

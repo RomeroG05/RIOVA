@@ -1,0 +1,87 @@
+rules_version = '2';
+
+// Reglas de seguridad de RÍOVA (Cloud Firestore, proyecto appriova).
+//
+// * Contenido (sectores, preguntas, juegos, sensores): todos pueden leerlo;
+//   solo se edita desde la consola de Firebase (que no pasa por estas reglas)
+//   o con tool/seed_firestore.py usando una cuenta del proyecto.
+// * users/{uid}: cada teléfono (sesión anónima) solo ve y edita lo suyo.
+// * sectorStats / gameStats: contadores anónimos; solo se pueden sumar de a 1.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // Solo cambian las claves indicadas.
+    function onlyChanges(keys) {
+      return request.resource.data.diff(resource == null ? {} : resource.data)
+        .affectedKeys().hasOnly(keys);
+    }
+
+    // El campo `field` sube exactamente 1 (o vale 1 si es nuevo).
+    function plusOne(field) {
+      return !(field in request.resource.data.diff(resource == null ? {} : resource.data).affectedKeys())
+        || request.resource.data[field]
+           == (resource == null ? 0 : resource.data.get(field, 0)) + 1;
+    }
+
+    // ───── Contenido público, solo lectura ─────
+    match /sectors/{id}   { allow read: if true; allow write: if false; }
+    match /quizBank/{id}  { allow read: if true; allow write: if false; }
+    match /games/{id}     { allow read: if true; allow write: if false; }
+    match /medals/{id}    { allow read: if true; allow write: if false; }
+    match /missions/{id}  { allow read: if true; allow write: if false; }
+    match /meta/{id}      { allow read: if true; allow write: if false; }
+
+    // Sensores: la app solo lee. Un sensor IoT real debe escribir con una
+    // cuenta de servicio (Admin SDK), que no pasa por estas reglas.
+    match /sensors/{id}   { allow read: if true; allow write: if false; }
+
+    // ───── Datos de cada explorador ─────
+    match /users/{uid} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly([
+             'profile', 'progress', 'level', 'levelTitle', 'visitedCount',
+             'updatedAt', 'platform'])
+        && (request.resource.data.profile == null
+            || request.resource.data.profile.name.size() <= 30);
+
+      match /visits/{placeId} {
+        allow read, delete: if isOwner(uid);
+        allow create, update: if isOwner(uid)
+          && exists(/databases/$(database)/documents/sectors/$(placeId));
+      }
+
+      match /games/{gameId} {
+        allow read, delete: if isOwner(uid);
+        allow create: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['game', 'won', 'score', 'at'])
+          && request.resource.data.score is int;
+      }
+    }
+
+    // ───── Contadores anónimos ─────
+    match /sectorStats/{placeId} {
+      allow read: if true;
+      allow create, update: if signedIn()
+        && exists(/databases/$(database)/documents/sectors/$(placeId))
+        && onlyChanges(['visits', 'quizFirstTry', 'updatedAt'])
+        && plusOne('visits') && plusOne('quizFirstTry');
+    }
+
+    match /gameStats/{gameId} {
+      allow read: if true;
+      allow create, update: if signedIn()
+        && exists(/databases/$(database)/documents/games/$(gameId))
+        && onlyChanges(['plays', 'wins', 'updatedAt'])
+        && plusOne('plays') && plusOne('wins');
+    }
+  }
+}
