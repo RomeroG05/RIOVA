@@ -19,6 +19,8 @@ import '../../state/explorer_controller.dart';
 import '../onboarding/create_explorer_screen.dart';
 import '../../core/widgets/two_column_grid.dart';
 import '../../core/widgets/hat.dart';
+import '../../core/widgets/profile_banner.dart';
+import '../../data/content/banner_content.dart';
 import '../../data/content/hat_content.dart';
 import '../../data/content/economy.dart';
 
@@ -276,23 +278,8 @@ class _IdentityCard extends ConsumerWidget {
     final t = Theme.of(context).textTheme;
     final level = state.level;
     final profile = state.profile;
-    return Container(
-      padding: const EdgeInsets.all(18),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        gradient: const LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [Color(0xFF3FC6F1), Color(0xFF1E6FD9), Color(0xFF0B57B8)],
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Color(0x400B57B8),
-            blurRadius: 20,
-            offset: Offset(0, 8),
-          ),
-        ],
-      ),
+    return ProfileBanner(
+      bannerId: state.progress.equippedBanner,
       child: Column(
         children: [
           Row(
@@ -989,7 +976,7 @@ class _JourneyCard extends StatelessWidget {
   }
 }
 
-/// Acceso a la "Tienda de Sombreros".
+/// Acceso a la "Tienda" (sombreros y banners).
 class _StoreCard extends StatelessWidget {
   const _StoreCard({required this.state});
 
@@ -999,9 +986,10 @@ class _StoreCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final t = Theme.of(context).textTheme;
     final p = state.progress;
-    final next = hats.where((h) => !p.ownedHats.contains(h.id)).firstOrNull;
+    final owned = p.ownedHats.length + p.ownedBanners.length;
+    final total = hats.length + banners.length;
     return Pressable(
-      semanticLabel: 'Abrir la tienda de sombreros',
+      semanticLabel: 'Abrir la tienda',
       onTap: () => context.push(Routes.store),
       child: AppCard(
         color: AppColors.yellowSoft,
@@ -1025,14 +1013,14 @@ class _StoreCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Tienda de Sombreros 🛍️',
+                    'Tienda 🛍️',
                     style: t.titleMedium?.copyWith(color: AppColors.amberInk),
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    next == null
-                        ? '¡Tienes los ${hats.length} sombreros! Eres todo un coleccionista.'
-                        : 'Tienes ${p.wallet} gotitas para gastar. ${p.ownedHats.length}/${hats.length} sombreros.',
+                    owned == total
+                        ? '¡Tienes todos los sombreros y banners! Eres todo un coleccionista.'
+                        : 'Sombreros y banners para tu perfil. Tienes ${p.wallet} gotitas para gastar.',
                     style: t.bodyMedium?.copyWith(color: AppColors.amberInk),
                   ),
                 ],

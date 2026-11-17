@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/utils/day_key.dart';
+import '../data/content/banner_content.dart';
 import '../data/content/economy.dart';
 import '../data/content/game_content.dart';
 import '../data/content/hat_content.dart';
@@ -54,6 +55,7 @@ class RewardOutcome {
     this.newMedals = const [],
     this.newGames = const [],
     this.newHats = const [],
+    this.newBanners = const [],
     this.missionBonus = 0,
   });
 
@@ -66,6 +68,9 @@ class RewardOutcome {
 
   /// Sombreros que se pueden comprar desde este nuevo nivel.
   final List<HatInfo> newHats;
+
+  /// Banners que se pueden comprar desde este nuevo nivel.
+  final List<BannerInfo> newBanners;
   final int missionBonus;
 
   int get total => gotitas + missionBonus;
@@ -73,7 +78,8 @@ class RewardOutcome {
       total == 0 && levelUp == null && newMedals.isEmpty && newGames.isEmpty;
 }
 
-enum HatPurchase { bought, notEnough, alreadyOwned, levelLocked }
+/// Resultado de comprar algo en la tienda (sombrero o banner).
+enum Purchase { bought, notEnough, alreadyOwned, levelLocked }
 
 class ExplorerController extends Notifier<ExplorerState> {
   ProgressRepository get _repo => ref.read(progressRepositoryProvider);
@@ -167,6 +173,11 @@ class ExplorerController extends Notifier<ExplorerState> {
           (h) => !h.availableAt(beforeLevel) && h.availableAt(afterLevel.level),
         )
         .toList(growable: false);
+    final newBanners = banners
+        .where(
+          (b) => !b.availableAt(beforeLevel) && b.availableAt(afterLevel.level),
+        )
+        .toList(growable: false);
     _commit(next);
     return RewardOutcome(
       gotitas: earned,
@@ -175,6 +186,7 @@ class ExplorerController extends Notifier<ExplorerState> {
       newMedals: newMedals,
       newGames: newGames,
       newHats: newHats,
+      newBanners: newBanners,
     );
   }
 
@@ -260,13 +272,13 @@ class ExplorerController extends Notifier<ExplorerState> {
 
   /// Compra un sombrero con gotitas DISPONIBLES y se lo pone. No cambia las
   /// gotitas ganadas (XP), así que nunca baja el nivel.
-  HatPurchase buyHat(HatInfo hat) {
+  Purchase buyHat(HatInfo hat) {
     final p = state.progress;
-    if (p.ownedHats.contains(hat.id)) return HatPurchase.alreadyOwned;
+    if (p.ownedHats.contains(hat.id)) return Purchase.alreadyOwned;
     if (!hat.availableAt(LevelProgress.of(p.gotitas).level)) {
-      return HatPurchase.levelLocked;
+      return Purchase.levelLocked;
     }
-    if (p.wallet < hat.price) return HatPurchase.notEnough;
+    if (p.wallet < hat.price) return Purchase.notEnough;
     _commit(
       p.copyWith(
         spent: p.spent + hat.price,
@@ -274,7 +286,7 @@ class ExplorerController extends Notifier<ExplorerState> {
         equippedHat: hat.id,
       ),
     );
-    return HatPurchase.bought;
+    return Purchase.bought;
   }
 
   /// Se pone un sombrero comprado, o se lo quita con `null`.
@@ -283,6 +295,33 @@ class ExplorerController extends Notifier<ExplorerState> {
     if (hatId != null && !p.ownedHats.contains(hatId)) return;
     if (p.equippedHat == hatId) return;
     _commit(p.copyWith(equippedHat: hatId));
+  }
+
+  /// Compra un banner para la tarjeta del perfil y lo equipa. Misma lógica
+  /// que los sombreros: nivel mínimo + gotitas disponibles.
+  Purchase buyBanner(BannerInfo banner) {
+    final p = state.progress;
+    if (p.ownedBanners.contains(banner.id)) return Purchase.alreadyOwned;
+    if (!banner.availableAt(LevelProgress.of(p.gotitas).level)) {
+      return Purchase.levelLocked;
+    }
+    if (p.wallet < banner.price) return Purchase.notEnough;
+    _commit(
+      p.copyWith(
+        spent: p.spent + banner.price,
+        ownedBanners: {...p.ownedBanners, banner.id},
+        equippedBanner: banner.id,
+      ),
+    );
+    return Purchase.bought;
+  }
+
+  /// Equipa un banner comprado, o vuelve al original con `null`.
+  void equipBanner(String? bannerId) {
+    final p = state.progress;
+    if (bannerId != null && !p.ownedBanners.contains(bannerId)) return;
+    if (p.equippedBanner == bannerId) return;
+    _commit(p.copyWith(equippedBanner: bannerId));
   }
 
   Future<void> reset() async {

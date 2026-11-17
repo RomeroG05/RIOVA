@@ -11,7 +11,7 @@ import '../../features/map/map_screen.dart';
 import '../../features/onboarding/create_explorer_screen.dart';
 import '../../features/onboarding/welcome_screen.dart';
 import '../../features/place/place_screen.dart';
-import '../../features/profile/hat_store_screen.dart';
+import '../../features/profile/store_screen.dart';
 import '../../features/profile/profile_screen.dart';
 import '../../features/qr/qr_codes_screen.dart';
 import '../../features/qr/scan_qr_screen.dart';
@@ -113,7 +113,7 @@ final routerProvider = Provider<GoRouter>((ref) {
                 routes: [
                   GoRoute(
                     path: 'tienda',
-                    builder: (_, _) => const HatStoreScreen(),
+                    builder: (_, _) => const StoreScreen(),
                   ),
                 ],
               ),

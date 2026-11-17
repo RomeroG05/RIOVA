@@ -190,6 +190,15 @@ class _RewardDialogState extends State<_RewardDialog>
                           text: '¡Nuevo sombrero en la tienda: ${h.name}!',
                         ),
                       ],
+                      for (final b in o.newBanners) ...[
+                        const SizedBox(height: 10),
+                        _Banner(
+                          icon: Icons.wallpaper_rounded,
+                          color: AppColors.blueSoft,
+                          foreground: AppColors.blue,
+                          text: '¡Nuevo banner en la tienda: ${b.name}!',
+                        ),
+                      ],
                       const SizedBox(height: 20),
                       ChunkyButton(
                         label: widget.action,

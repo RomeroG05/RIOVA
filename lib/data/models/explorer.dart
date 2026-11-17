@@ -66,6 +66,8 @@ class ExplorerProgress {
     this.spent = 0,
     this.ownedHats = const {},
     this.equippedHat,
+    this.ownedBanners = const {},
+    this.equippedBanner,
     this.replayDay,
     this.replayEarned = 0,
   });
@@ -83,6 +85,10 @@ class ExplorerProgress {
   /// Sombreros comprados y el que lleva puesto el avatar (o `null`).
   final Set<String> ownedHats;
   final String? equippedHat;
+
+  /// Banners (fondo de la tarjeta del perfil) comprados y el equipado.
+  final Set<String> ownedBanners;
+  final String? equippedBanner;
 
   /// Gotitas ganadas hoy por repetir juegos (para el tope diario).
   final String? replayDay;
@@ -115,6 +121,8 @@ class ExplorerProgress {
     int? spent,
     Set<String>? ownedHats,
     Object? equippedHat = _keep,
+    Set<String>? ownedBanners,
+    Object? equippedBanner = _keep,
     String? replayDay,
     int? replayEarned,
   }) => ExplorerProgress(
@@ -135,6 +143,10 @@ class ExplorerProgress {
     equippedHat: identical(equippedHat, _keep)
         ? this.equippedHat
         : equippedHat as String?,
+    ownedBanners: ownedBanners ?? this.ownedBanners,
+    equippedBanner: identical(equippedBanner, _keep)
+        ? this.equippedBanner
+        : equippedBanner as String?,
   );
 
   static const _keep = Object();
@@ -153,6 +165,8 @@ class ExplorerProgress {
     'spent': spent,
     'ownedHats': ownedHats.toList(),
     'equippedHat': equippedHat,
+    'ownedBanners': ownedBanners.toList(),
+    'equippedBanner': equippedBanner,
     'replayDay': replayDay,
     'replayEarned': replayEarned,
   };
@@ -176,6 +190,8 @@ class ExplorerProgress {
       spent: (json['spent'] as num?)?.toInt() ?? 0,
       ownedHats: set('ownedHats'),
       equippedHat: json['equippedHat'] as String?,
+      ownedBanners: set('ownedBanners'),
+      equippedBanner: json['equippedBanner'] as String?,
       replayDay: json['replayDay'] as String?,
       replayEarned: (json['replayEarned'] as num?)?.toInt() ?? 0,
     );
